@@ -1,0 +1,128 @@
+h1{
+    color : white;/*warna*/
+    font-family : 'Courier New', Courier, monospace; /*Jenis Font*/
+    font-size : 40px;/*ukuran font. px=pixel, %=persen*/
+    font-variant : small-caps;/*jenis huruf besar berukuran kecil*/
+    font-style : italic; /*Style font. miring, tebal, dsb.*/
+    text-align : center;/*align text. left = kiri, center = tengah, right = kanan*/
+}
+h2{
+    color : rgb(250, 252, 251);/*color dalam rgb*/
+    font-family : Consolas;
+    font-size : 27px;
+    line-height : 10px;
+}
+p{
+    color : white;
+    font-family : Dejavu sans mono;
+    font-size : 100%;
+    font-weight : bold; /*Ketebalan font*/
+    line-height : 25px; /*jarak antar baris*/
+    text-align  : justify;
+    text-decoration : underline;
+    text-indent : 20px; /*indentasi paragraf / tab pada keyboard*/
+}
+g{
+    color : white;
+    font-family : Dejavu sans mono;
+    font-size : 100%;
+    font-weight : bold;
+    line-height : 25px;
+    text-align : justify;
+    text-decoration : none;
+}
+/*contoh pseudo class link, hover, active dan visited*/
+.Link:link{
+    color : green;
+    text-decoration : underline;
+}
+.Link:hover{
+    color : red;
+    font-size : 125%;
+}
+.Link:active{
+    color : blue;
+    font-style : italic;
+}
+.Link:visited{
+    color : gray;
+    text-decoration : underline;
+}
+/*contoh pseudo class first-child, last-child dan nth-child(n)*/
+li:first-child a.lista{
+    color : green;
+}
+li:nth-child(2) a.lista{
+    color : red;
+}
+li:last-child a.lista{
+    color : blue;
+}
+/*contoh penggunaan background*/
+body{
+    background-color : blue;
+    background-image : url(lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg);
+    background-size : 100%; /*background-size: cover = membuat background size nya mengikuti blok yang ada. semisal suatu blok berbentuk lingkaran, dengan mneggunakan cover, bentuk gambar juga akan lingkaran*/
+    /*background-repeat : no-repeat; repeat-x, repeat-y, no-repeat*/
+    /*background-position : top right; top/center/bottom left/center/right*/
+}
+/*contoh first-of-type dan last-of-type*/
+c:first-of-type{
+    color : white;
+}
+c:last-of-type{
+    color : blue;
+}
+ul li a.list{
+    color : blue;
+    font-family : Arial, Helvetica, sans-serif;
+}
+ol li a.list{
+    color : white;
+    font-family : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/*Contoh Penggunaan selector yang dibuat sendiri
+  untuk membuat settingan dari paragraf. 
+  settingan tersebut berbeda beda */
+/*id*/
+#p1{
+    color : orange;
+}
+/*class*/
+.p2{
+    color : red;
+}
+/*PETUNJUK SYNTAX
+        text-decoration
+    underline : garis bawah
+    overline : garis atas
+    line-through : mencoret kata
+    none : tidak ada dekorasi
+        text-transform 
+    none : tidak ada perubahan
+    lowercase : abcdefg...
+    uppercase : ABCDEFG...
+    capitalize : Abc Def Ghi ...
+    letter-spacing : mengatur jarak antar huruf
+    word spacing : mengatur jarak antar kata
+        Background
+    background-color : mengatur warna
+    background-image : mengatur gambar yang akan digunakan sebagai background
+    background-position : mengatur posisi gambar pada background
+    background-repeat : mengatur jenis pengulangan gambar pada background
+    background-size : mengatur ukuran background
+        list selector
+    ol li a : pada komponen a pada list dengan tipe ul atau ol.
+    selector bisa dibuat sendiri. pastinya pada html. tipe selector tersebut : id, class
+        pseudo-class
+    :link = style default pada sebuah link <a href="">
+    :hover = aktif ketika elemen nya disorot menggunakan mouse/mouse diletakkan diatas elemennya
+    :active = aktif ketika link di klik
+    :visited = style ketika link telah diklik.
+    :first-child = anak pertama dari suatu percabangan
+    :last-child = anak terakhir dari suatu percabangan 
+    :nth-child(n) = anak ke n dari suatu percabangan
+    :first-of-type = elemen pertama yang ditemukan dari sebuah tag
+    :last-of-type = elemen terakhir yang ditemukan dari sebuah tag
+    color, text-decoaration, dsb = inherit --> mengikuti sifat parentnya
+*/

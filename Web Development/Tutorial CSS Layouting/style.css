@@ -1,0 +1,356 @@
+/*contoh kegunaan div pada class*/
+.Judul{
+    font-family : arial;
+    text-align : center;
+    background-image: url(lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg);
+    background-size: 100%;
+    color: white;
+}
+.subjudul{
+    font-family : 'Ubuntu Mono';
+    background-color : black;
+    color : white;
+}
+.kontensubjudul{
+    font-family : 'Dejavu sans mono';
+    text-align : justify;
+    font-size: 18px;
+    background-image: url(lorenzo-herrera-p0j-mE6mGo4-unsplash.jpg);
+    background-size: 100%;
+    color: white;
+}
+/*contoh kegunaan span*/
+.kontensubjudul span{
+    color : royalblue; 
+}
+/*inline-block*/
+a{
+    background-color : red;
+    width : 200px;
+    height : 200px;
+    display : inline-block;
+}
+/*block*/
+.link, ul li a{
+    background-color : green;
+    display : block;
+}
+/*visible*/
+.contohvisible{
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+    overflow: visible;
+}
+/*auto*/
+.contohauto{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    overflow: auto;
+}
+/*hidden*/
+.contohhidden{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    overflow: hidden;
+}
+/*scroll*/
+.contohscroll{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    overflow: scroll;
+}
+/*contoh margin*/
+/*contoh margin overlapping vertikal pada class dua dan tiga*/
+.satu{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    margin-left: 100px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-right: 50px; 
+}
+/*contoh margin left pada class dua dan 3 dan right pada class dua dan tiga auto*/
+.dua{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin-top: 30px; /*jarak antara satu dan dua diambil dari ukuran terbesar
+                        antara margin bottom class satu atau margin top class dua*/
+    margin-left: auto; /*dengan margin left dan right auto, akan membuat*/
+    margin-right: auto;/*posisi margin pada suatu class berada di tengah browser*/                
+}
+/*contoh negative margin*/
+.tiga{
+    width: 50px;
+    height: 50px;
+    background-color: violet;
+    margin-top: -80px;/*block dari class tiga akan masuk ke block class dua. 
+                        karena nilainya negative*/
+    margin-right: auto;/*dengan margin left dan right auto, akan membuat*/
+    margin-left: auto;/*posisi margin pada suatu class berada di tengah browser*/                        
+}
+/*margin overlapping horizontal*/
+.display{
+    margin-right: 30px;
+}
+.dimensi{
+    margin-left: 20px; /*jarak antara block display dan dimensi secara horizontal
+                        adalah margin right class display + margin left class dimensi*/
+}
+/*shorthand dengan margin satu nilai*/
+.empat{
+    background-color: black;
+    color: white;
+    width: 25px;
+    height: 25px;
+    margin: 50px;/*akan membuat semua sisi margin bernilai 50px*/
+}
+/*shorthand dengan margin dua nilai*/
+.lima{
+    background-color: red;
+    color: blue;
+    width: 200px;
+    height: 200px;
+    margin: 50px 100px;/*akan membuat sisi margin top dan bottom bernilai 50px
+                        dan sisi margin left dan right bernilai 100px*/
+}
+/*shorthand dengan margin tiga nilai*/
+.enam{
+    background-color: pink;
+    color: white;
+    width: 100px;
+    height: 100px;
+    margin: 20px 50px 100px;/*akan membuat sisi margin top = 20px,
+                             margin left&right = 50px, margin bottom=100px*/
+}
+/*shorthand dengan margin empat nilai*/
+.tujuh{
+    background-color: royalblue;
+    color: red;
+    width: 50px;
+    height: 50px;
+    margin: 50px 30px 20px 40px; /*akan membuat margin top=50px, right=30px,
+                                   bottom=20px dan left=40px*/
+}
+/*contoh padding dan border*/
+.padding{
+    background-color: brown;
+    color: white;
+    width: 200px;
+    height: 200px;
+    margin: 10px auto 50px;
+    text-align: center;
+    padding-left: 20px;/*Menambah jarak pada tepi kotak dengan tulisan*/
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-left: 5px solid black;/*penulisan border=(ketebalan_border style_border warna_border*/
+    border-right: 5px dashed black;
+    border-top: 5px dotted black;
+    border-bottom: 5px double black;
+}
+#boxsizi{
+    width: 200px;
+    margin: auto;
+    box-sizing: border-box;
+}
+.par1{
+    border: 20px dashed  qred;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
+.par2{
+    border: 10px dashed blue;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background-color: red;
+}
+/*contoh float*/
+.container{
+    width: 600px;
+    height: 700px;
+    border: 1px solid black;
+    margin: auto;
+}
+.la, .li, .lu{
+    width: 100px;
+    height: 100px;
+}
+.la{background-color: blue;}
+.li{
+    background-color: red;
+    float: right;
+}
+.lu{
+    background-color: brown;
+}
+/*contoh text-wrapping menggunakan float*/
+img{
+    width: 200px;
+    height: 200px;
+    float: right;
+    margin: 5px;
+}
+.container p{
+    margin: 5px;
+}
+/*contoh image galery menggunakan float*/
+.ra{
+    width: 100px;
+    height: 100px;
+    background-color:black;
+    margin: 5px;
+    color: white;
+    /*cara membuat posisi text berada dipusat block, buat line-height nya setara dengan height block*/
+    text-align: center;
+    line-height: 100px;
+    float: left;
+}
+/*contoh multi column layout menggunakan float*/
+.konten{
+    width: 900px;
+    border: 1px solid black;
+    margin: auto;
+    padding: 5px;
+}
+.kiri, .tengah, .kanan{
+    display: block;
+    height: 200px;
+    margin: 15px;
+    float: left;
+}
+.kiri{
+    width: 150px;
+    background-color: salmon;
+}
+.tengah{
+    width: 500px;
+    background-color: lightskyblue;
+}
+.kanan{
+    width: 150px;
+    background-color: limegreen;
+}
+/*contoh penggunaan clear*/
+.clear{
+    clear: both;
+}
+/*contoh penggunaan position*/
+.position{
+    width: 800px;
+    height: 800px;
+    background-color: white;
+    position: relative;
+}
+.kotak1, .kotak2, .kotak3, .kotak4{
+    width: 200px;
+    height: 200px;
+}
+.kotak1{
+    background-color: black;
+}
+/*contoh relative*/
+.kotak2{
+    background-color: blue;
+    position: relative;
+    top: 50px;
+    left: 150px;
+}
+/*contoh absolute*/
+.kotak3{
+    background-color: yellow;
+    position: absolute;
+    top: 350px;
+    left: 100px;
+
+}
+/*contoh z-index*/
+.kotak4{
+    background-color: purple;
+    position: absolute;
+    z-index: 1;
+}
+/*contoh fixed*/
+.kotak5{
+    background-color: orange;
+    position: fixed;
+    /*contoh penggunaan position yang dapat menggantikan kegunaan width & height*/
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 800px;
+}
+/*
+        syntax css layouting
+    Overflow : visible: value default, auto: otomatis menambahkan scroll jika konten tidak mencukupi,
+    hidden: , scroll
+
+    box model terdiri dari : margin, border, padding dan content
+    area terluar ---> terdalam : Margin --> Border --> Padding --> content
+    properti : (margin|padding|border)-(top|right|bottom|left| )
+    penulisan format padding sama seperti margin. bedanya, padding tidak bisa
+    diberi nilai negatif dan auto. sedangkan margin bisa. 
+    Pemakaian padding, mempengaruhi ukuran box.
+    Semisal ukuran kotak widthxheight=200x200. jika diberikan padding-left,right,top,bottom adalah 20.
+    maka ukuran kotaknya akan menjadi (width+paddingleft+paddingright)x(height+paddingtop+paddingbottom=(200+20+20)x(200+20+20)=240x240
+    overlapping margin: jika margin vertikal(bottom dan top), maka margin yang dipakai adalah margin terbesar
+                        jika margin horizontal(right dan left atau sebaliknya), maka kedua margin dijumlahkan 
+
+    style_border: solid(garis tebal), dotted(titik titik), dashed(garis putus-putus), double(style dua garis).
+    sama seperti padding, ukuran dari border juga dapat merubah ukuran dari box. semisal, seperti contoh sebelumnya,
+    setelah ukuran box ditambah padding, kemudian diberikan border dengan ukuran setiap sisinya adalah 5. maka ukuran box sekarang
+    = (width+borderleft+borderright)x(height+bordertop+borderbottom)= (240+5+5)x(240+5+5)=250x250 
+    box-sizing: border-box; memungkinkan box tersebut ukurannya tetap walaupun telah diberikan padding dan border
+    normal flow : box-model
+    out of flow: float
+        float
+    none:default
+    left: kiri
+    right: kanan
+    dengan properti float, kita bisa melakukan
+    text wrapping: membuat teks mengelilingi gambar / elemen lain
+    image gallery: membuat serangkaian gambar menjadi galeri
+    multi-column layout: membuat halaman memiliki beberapa kolom
+
+        clear
+    clear: left, right, both. : mengikuti float yang digunakan
+    both: left-right
+    clear digunakan untuk mengatasi masalah yang ada pada float
+
+        position
+    position digunakan untuk memposisikan suatu blok pada web
+    position: static, relative, absolute, fixed
+    static: default
+    relative: jika diumpamakan terdapat 3 kotak, dengan urutan dari paling depan kotak 1, kotak 2 dan kotak 3
+              kemudian, dengan diberikan position relative pada kotak 2. maka, kotak 2 tersebut diumpamakan bahwa kotak tersebut diangkat.
+              hal ini membuat, kotak 2 tersebut dapat dipindahkan ke area lain, tanpa harus menggeser kotak 1 dan kotak 2.
+              dengan menggunakan position: relative, maka properti yang dapat digunakan adalah top, left, right, bottom : ...px
+              position relative ini berpindah, relatif terhadap posisi semulanya
+    absolute: jika diumpamakan terdapat 3 kotak, dengan urutan dari paling depan kotak 1, kotak 2 dan kotak 3
+              kemudian, dengan diberikan position absolute pada kotak 2. dapat diumpamakan bahwa kotak 2 tersebut diangkat dari posisinya sama
+              seperti relative. hanya saja, pada kasus absolute ini, posisi tempat kotak 2 tersebut diangkat langsung diisi oleh kotak 3. yang mengakibatkan
+              posisi dari kotak 2 itu ada diatas kotak 3. 
+              dengan menggunakan position: absolute, maka properti yang dapat digunakan adalah top, left, right, bottom: ...px
+              position absolute ini berubah, relatif terhadap posisi parentnya. semisal pada browser, terdapat div1, div2, dsb. saat memindahkan posisi div2 dengan absolute
+              dengan top 0px dan left 0px, maka posisi dari div tersebut akan berada di ujung browser bagian atas kiri
+              namun, posisi absolute ini juga diumpamakan bahwa perpindahannya akan bergerak berdasarkan blok yang memiliki tinggi yang sama
+              semisal, tinggi div2 adalah 2 sedangkan parentnya misalkan body memiliki tinggi 1, dan elemen terluarnya memiliki tinggi 2, maka body akan berpindah berdasarkan elemen terluar dari body.
+              untuk mengatasi hal ini, maka element parentnya harus diberikan tinggi yang sama. maka dari itu, berikan elemen parentnya harus diberikan position relative
+    fixed: memiliki kesamaan seperti absolute, hanya saja, elemen fixed ini berpindah berdasarkan elemen terluarnya tanpa mempedulikan elemen parentnya memiliki tinggi yang sama atau tidak ( non static or static )
+           dalam kasus browser pengguna, dengan menggunakan position: fixed, elemen yang berpindah tersebut akan berpindah berdasarkan jendela browser mereka. sehingga, jika posisi block ada di ujung atas kiri browser, jika user melakukan scrool pada jendela browser mereka, 
+           maka block tersebut akan mengikuti scrool tersebut.
+    z-index: berguna untuk memposisikan suatu box berada paling atas. semakin besar z-index, maka posisinya akan semakin diatas
+             z-index hanya berlaku ketika suatu blok menggunakan position relative atau absolute
+
+
+    
+
+*/

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind-Opening</title>
+    <!--setelah melakukan hal pada komen paling bawah, link-kan file output.css ke html-->
+    <link rel="stylesheet" href="css/final.css" />
+  </head>
+  <body>
+    <h1 class="text-4xl font-bold text-blue-600">Hello World</h1>
+    <a href="#" class="bg-green-500 p-3 text-white inline-block m-3 rounded shadow hover:bg-green-700">ini tombol</a>
+    <p class="m-3 bg-yellow-200">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, dolorum facilis, voluptatibus tempora similique possimus tempore officiis obcaecati dolor recusandae doloribus laborum sapiente molestias illo aperiam debitis eos
+      architecto vitae odit aliquid, velit quos! Consequuntur delectus, sapiente ex eius est at ut placeat ipsam veniam quibusdam expedita laboriosam, tempore assumenda!
+    </p>
+  </body>
+</html>
+<!--untuk menggunakan tailwind css, ketikkan ke terminal 'npm i -D tailwindcss postcss autoprefixer'-->
+<!--kemudian dilanjutkan dengan menggunakan syntax npx tailwindcss init-->
+<!--setelah melakukan hal diatas, masuk ke file tailwind.config.js, pada bagian content, masukkan syntax './public/**/*.{html, js}' yang mana, arti dari syntax tersebut adalah, masuk ke folder public, pada semua folder pada public dan semua file pada public, eksekusi yang berformat html atau js-->
+<!--lalu buat file input.css, pastikan isi filenya sama seperti file pada folder ini-->
+<!--setelah melakukan hal diatas, masukkan syntax 'npx tailwindcss -i ./(lokasi file input.css, jika satu folder dengan lokasi eksekusi terminal saat ini, tidak perlu ditulis)/input.css -o ./(lokasi folder yang menyimpan (output.css atau nama file css yang kita inginkan))/(output.css atau nama file css yang kita inginkan) --watch' ke terminal-->
+<!--pastikan setiap kali ingin menggunakan tailwindcss untuk menggunakan syntax diatas. untuk mempermudah penggunaan syntaxnya, kita bisa menggunakan setting pada package.json di bagian script-->
+<!--jika project web yang dibangun sudah selesai, atau tidak ada perubahan, kita bisa melakukan pengecilan ukuran css-->
+<!--gunakan syntax 'npx tailwindcss -o ./((lokasi folder yang menyimpan (output.css atau nama file css yang kita inginkan))/nama file css --minify'-->

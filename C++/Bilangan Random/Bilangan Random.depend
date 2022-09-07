@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1658325474 source:d:\dev\c++\bilangan random\main.cpp
+	<iostream>
+	<cstdlib>
+

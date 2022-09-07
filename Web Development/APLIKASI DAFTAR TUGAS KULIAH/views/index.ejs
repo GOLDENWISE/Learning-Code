@@ -1,0 +1,29 @@
+<main>
+  <h2 class="mt-5 fw-bolder text-info">DAFTAR TUGAS</h2>
+  <table class="table mt-5">
+    <thead>
+      <tr class="text-primary">
+        <th scope="col">#</th>
+        <th scope="col">Nama Matkul</th>
+        <th scope="col">Deadline</th>
+        <th scope="col">Deskripsi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (daftarTugas.length === 0) { %>
+      <tr>
+        <td colspan="4">
+          <div class="alert alert-danger" role="alert">DATA KOSONG</div>
+        </td>
+      </tr>
+      <% } else { %> <% daftarTugas.forEach((data, i) => { %>
+      <tr>
+        <th scope="row" class="text-primary"><%= i+1 %></th>
+        <td><%= data.matkul %></td>
+        <td><%= data.deadline %></td>
+        <td><a class="btn btn-primary badge" href="/seemore/<%= i %>  " role="button">See More</a></td>
+      </tr>
+      <% }) %> <%}%>
+    </tbody>
+  </table>
+</main>

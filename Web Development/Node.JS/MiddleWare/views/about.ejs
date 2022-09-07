@@ -1,0 +1,20 @@
+<%- include('layout/header') %>
+<title>ABOUT</title>
+<%- include('layout/nav') %>
+
+<h1>Ini, about!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <!--Secara defaultl, foto,css,dsb tidak akan bisa diakses-->
+      <!--karena, file tersebut akan dilindungi oleh expressJS sebagai data privasi-->
+      <!--agar bisa diakses, kita harus menggunakan middleware bernama express.static-->
+      <!--yang mana, middleware ini akan memberikan izin kepada express untuk mengakses foto atau data lain yang dikirimkan-->
+      <!--untuk penggunaannya, dapat dilihat pada file app.js "built-in middleware" -->
+      <img src="justprofile.jpg" class="rounded-circle" alt="My Profile" />
+      <h1 class="display-4">Hafiz</h1>
+      <p class="lead">Student | Programmer</p>
+    </div>
+  </div>
+</div>
+<%- include('layout/footer') %>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS LAYOUTING</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+            <!--contoh div-->
+        <div class="Judul">
+            <h1>CSS LAYOUTING</h1>
+        </div>
+        <div class="subjudul">
+            <h2>1. div & span </h2>
+        </div>
+        <div class="kontensubjudul">
+            <p>
+                <!--contoh span-->
+                tag pada HTML digunakan untuk memberikan <span>maksud/arti</span> pada
+                sebuah konten (p untuk paragraf, b1 untuk heading utama, dll)
+                <br>
+                tag div dan span tidak memiliki arti apapun. keduanya digunakan
+                untuk mengelompokkan tag tag HTML dan memberikan informasi terhadap
+                tag tag HTML dan memberikan informasi terhadap tag-tag tersebut. 
+            </p>
+        </div>
+        <div class="subjudul">
+            <h2>2. Display</h2>
+        </div>
+        <div class="kontensubjudul">
+            <p>
+                setiap tag pada HTML berada didalam sebuah kotak. properti display
+                pada CSS mengatur perilaku dari kotak tersebut. 
+                <br>
+                setaip tag pada HTML memiliki nilai default untuk properti display.
+                tetapi kita juga dapat mengubah perilaku dari suatu tag dengan mengganti
+                valuenya.
+                <br>
+                value pada display diantaranya adalah : 
+                <ul>
+                    <li>inline</li>
+                    <li>inline-block</li>
+                    <li>block</li>
+                    <li>none</li>
+                </ul>
+            </p>
+            <div class="subjudul">
+                <h3>2.1. inline</h3>
+            </div>
+            <p>
+                elemen inline  : b, strong, i, em, a, span, sub, sup, button,
+                input, label, select, textarea.
+                <br>
+                inline ini dalam HTML adalah <span>default</span>                
+            </p>
+            <div class="subjudul">
+                <h3>2.2. inline-block</h3>
+            </div>
+            <p>
+                inline-block dalam HTML <span>tidak akan pernah secara default</span>
+                sehingga, harus diubah secara manual. perbedaan dengan inline adalah, inline block ini dapat diatur
+                tinggi dan lebarnya. sedangkan inline tidak bisa.                 
+            </p>
+            <div class="subjudul">
+                <h3>2.2. block</h3>
+            </div>
+            <p>
+                block dalam HTML secara default <span>menambahkan baris baru</span> ketika dibuat.
+                jika lebar dari block tidak diatur, maka elemen block akan memenuhi lebar dari browser
+                didalam elemen block, kita dapat menyimpan tag dengan elemen - elemen display
+                <br>
+                elemen block : h1-h6, p, ol, ul, li, form, hr, div. 
+            </p>
+        </div>
+        <!--inline-block-->
+        <!--agar tidak ada jarak antara block a href, jangan berikan spasi antar dua block ini-->
+        <a href="https://youtu.be/VPaIdiPvWQM" class="display">Display</a><a href="https://youtu.be/VkUSH3SIH0g" class="dimensi">Dimensi & Overflow</a>
+        <!--block-->
+        <div class="link">
+            <ul>
+                <li><a href="https://youtu.be/skb-qe5nvxQ">Box Model : Konsep</a></li>
+                <li><a href="https://youtu.be/Ld_TKKhsL9M">Box Model : Margin</a></li>
+            </ul>
+        </div>
+        <div class="contohvisible">
+            contoh visible:
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>        
+        <div class="contohauto">
+            contoh auto: 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+        </div>
+        <div class="contohhidden">
+            contoh hidden: 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+        </div>
+        <div class="contohscroll">
+            contoh scroll:
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolores iure, eaque officia
+            aliquam placeat, alias soluta praesentium, nemo maxime eos. Veritatis, commodi officiis eius
+            fugit doloribus culpa natus iusto!
+        </div>
+        <hr>
+        <br />
+        <h2>CONTOH MARGIN</h2>
+        <div class="satu">1</div>
+        <div class="dua">2</div>
+        <div class="tiga">3</div>
+        <div class="empat">4</div>
+        <div class="lima">5</div>
+        <div class="enam">6</div>
+        <div class="tujuh">7</div>
+        <hr>
+        <h2>CONTOH PADDING & BORDER</h2>
+        <br>
+        <div class="padding">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum similique alias saepe quasi
+            in est mollitia eligendi fugit possimus quas ab, nostrum corporis laboriosam. Officia maiores 
+            distinctio eos laborum corrupti.
+        </div>
+        <div id="boxsizi">
+            <div class="par1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi maxime porro asperiores consequatur
+                perferendis sit deleniti. Mollitia corrupti voluptas recusandae quaerat, officiis perspiciatis 
+                consequuntur aspernatur, qui rerum facilis aliquam tempora.
+            </div>
+            <div class="par2">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam sapiente repellendus incidunt 
+                ullam suscipit obcaecati, illum, modi vel ad atque ab, assumenda blanditiis. Facere maxime 
+                repudiandae maiores unde? Quam, veritatis.
+            </div>
+        </div>
+        <hr>
+        <h2>CONTOH FLOAT</h2>
+        <br>
+        <div class="container">
+            <!--contoh text-wrapping menggunakan float-->
+            <img src="gambar.jpg" alt="gambar">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea iste aliquam illum et neque, 
+               error commodi enim. Quis soluta ex, veniam ducimus quasi nobis similique recusandae, 
+               rem voluptatibus doloremque modi.
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ipsum, provident hic 
+               totam soluta laboriosam quos sequi magni nulla necessitatibus adipisci natus eligendi 
+               aliquid ducimus consectetur quae animi dolores officiis aspernatur. Pariatur asperiores 
+               doloribus, animi iste optio, ut, est distinctio commodi voluptatum laudantium dolorem 
+               omnis fuga quae corporis cupiditate dolores sequi hic quas. Modi quaerat magnam non 
+               corporis, nisi ratione id temporibus fugit vitae deserunt eveniet accusamus minus quo 
+               repellat harum saepe, aspernatur ab sint nulla fugiat amet impedit incidunt adipisci dignissimos. 
+               Earum assumenda nobis facilis. Ducimus illo omnis at, pariatur veniam dolorum beatae iure tempora 
+               suscipit rerum maxime accusantium.
+            </p>
+            <!--contoh image galery menggunakan float-->
+            <div class="galery">
+                <div class="ra">1</div>
+                <div class="ra">2</div>
+                <div class="ra">3</div>
+                <div class="ra">4</div>
+                <div class="ra">5</div>
+                <div class="ra">1</div>
+                <div class="ra">2</div>
+                <div class="ra">3</div>
+                <div class="ra">4</div>
+                <div class="ra">5</div>
+            </div>
+            <div class="la"></div>
+            <div class="li"></div>
+            <div class="lu"></div>
+        </div>
+        <!--contoh multicolumn layout menggunakan float-->
+        <div class="konten">
+            <div class="kiri"></div>
+            <div class="tengah"></div>
+            <div class="kanan"></div>
+            <!--contoh penggunaan clear: gunakan div kosong-->
+            <div class="clear"></div>
+        </div>
+        <hr>
+        <h2>CONTOH POSITION</h2>
+        <div class="position">
+            <div class="kotak1"></div>
+            <div class="kotak2">relative position</div>
+            <div class="kotak3">absolute position</div>
+            <div class="kotak4">z-index</div>
+            <div class="kotak5">fixed position</div>
+        </div>
+    </body>
+</html>

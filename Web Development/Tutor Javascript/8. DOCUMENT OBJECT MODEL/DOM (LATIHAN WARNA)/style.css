@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+}
+.royalBlue{
+    background-color: royalblue;
+}
+.kotak{
+    width: 30px;
+    height: 30px;
+    margin: 10px auto;
+}
+.Merah{
+    background-color: red;
+}
+.hijau{
+    background-color: green;
+}
+.biru{
+    background-color: blue;
+}

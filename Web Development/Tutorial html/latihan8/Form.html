@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form HTML</title>
+</head>
+<body>
+	<form><!--bikin semacam formulir/tempat pengisian data-->
+		<!--Elemen - elemen form-->
+		<label for="username">username :</label><!--tag label dari form yang akan diisi. cth : (label) : (inputan user)-->
+		<input type="text" id="username" ><!--Meminta inputan dari user-->
+		<br><!--label for = input id-->
+		<label for="password">password :</label>
+		<input type="password" id="password">
+		<br>
+		<input type="radio" id="pria" name="jeniskelamin"><label for="pria">pria</label><!--radio button, hanya memilih salah satu-->
+		<input type="radio" id="wanita" name="jeniskelamin"><label for="wanita">wanita</label>
+		<input type="radio" id="memilih untuk tidak diketahui" name="jeniskelamin"><label for="memilih untuk tidak diketaahui">memilih untuk tidak diketahui</label>
+		<!--name = nama dari suatu button-->
+		<!--type = jenis button-->
+		<br>
+		<br>
+		<br>
+		<input type="checkbox" id="Gamer" name="Proffession"><label for="Gamer">Gamer</label><!--checkbox button, boleh memilih lebih dari satu-->
+		<input type="checkbox" id="Youtuber" name="Proffession"><label for="Youtuber">Youtuber</label>
+		<input type="checkbox" id="Streamer" name="Proffession"><label for="Streamer">Streamer</label>
+		<textarea></textarea><!--dapat menuliskan sebuah kata, kalimat atau paragraf dalam sebuah area-->
+		<br>
+		<br>
+		<select><!--memilih sebuah pilihan yang telah ditetapkan-->
+			<option>JABODETABEK</option><!--pilihan yang akan dipilih oleh user-->
+			<option>PULAU JAWA</option>
+			<option>PULAU SUMATRA</option>
+			<option>PULAU KALIMANTAN</option>
+			<option>PULAU SULAWESI</option>
+			<option>PULAU PAPUA</option>
+			<option>KEPULAUAN MALUKU</option>
+			<option>BALI</option>
+			<option>NUSA TENGGARA BARAT</option>
+			<option>NUSA TENGGARA TIMUR</option>
+		</select>
+		<button type="Submit">Login</button><!--sebuah tombol yang bisa dikirim. seperti login, submit, dsb-->
+	</form>
+</body>
+</html> 	

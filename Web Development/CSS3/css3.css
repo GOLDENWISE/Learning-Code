@@ -1,0 +1,598 @@
+/*contoh penggunaan font face*/
+@font-face{
+    font-family: "ChunkFive";
+    src: url(ChunkFive-Regular.otf) format('opentype');
+}
+/*contoh web font*/
+/*syntax font face dibawah, merupakan salinan dari css webfont dari font squirell*/
+@font-face {
+    font-family: 'pt_sansregular';
+    src: url('PTS55F-webfont.woff2') format('woff2'),
+         url('PTS55F-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+body{
+    background-image: url(gambar.jpg);
+}
+/*penggunaan border radius*/
+.borderradius{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    margin: 10px;
+    border-radius: 20px; /*memungkinkan sudut suatu blok membentuk suatu lengkungan.*/ 
+    text-align: center;
+    line-height: 200px;
+    font-family: Dejavu sans mono;
+}
+.lingkaran{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 10px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 200px; /*jika suatu blok memiliki width dan height yang sama, yaitu membentuk persegi. dengan memberikan border-radius sebesar 1/2 dari width-nya, maka blok tersebut dapat membentuk suatu lingkaran*/
+    font-family: Dejavu sans mono;
+    color: blue;
+}
+.gambar{
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    background-image: url(elon\ sultan.jpg);
+    margin: 10px;
+    border-top-left-radius: 100px;
+    background-repeat: no-repeat;
+    background-size: cover; /*agar gambar yang diberikan full screen*/
+}
+.png{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    margin: 10px;
+    border-top-right-radius: 100px;
+    overflow: hidden; /*membuat semua objek yang keluar dari suatu bidang dihilangkan*/
+}
+/*membuat objek gambar melapisi background dari suatu block;*/
+.png img{
+    height: 200px;
+    width: 200px;
+}
+/*contoh opacity*/
+.opacity{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+}
+.opacity1{
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;/*membuat transparasi pada elemen atau block*/
+}
+.opacity2{
+    background-color: royalblue;
+    width: 100px;
+    height: 100px;
+}
+.rgba1{
+    background-color: rgba(252, 15, 192, 0.2);/*membuat suatu transparasi pada warna dari rgba.*/
+    width: 200px;
+    height: 200px;
+}
+.rgba2{
+    background-color: rgba(65, 105, 225, 1);
+    width: 100px;
+    height: 100px;
+}
+.hsla1{
+    background-color: hsla(0, 100%, 50%, 0.3);/*membuat suatu transparasi pada warna dari hsla*/
+    width: 200px;
+    height: 200px;
+}
+.hsla2{
+    background-color: hsla(240, 100%, 50%, 1);
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+.pewarnaanhsla a, .googlefont a, .vendorprefix a{
+    color: white;
+    text-decoration: none;
+}
+/*contoh box shadow*/
+.bayang{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 200px;
+    box-shadow: inset 0px 0px 10px 20px hsla(0, 0%, 0%, 0.5);/*contoh penggunaan box-shadow dengan transparansi hsla*/
+}
+/*contoh multiple shadow*/
+.multipleshadow{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    box-shadow: inset 0px 0px 10px 30px hsla(240, 100%, 50%, 0.5),
+                0px 0px 10px 20px hsla(147, 50%, 47%, 0.4);
+}
+.textshadow{
+    font-family: Ubuntu Mono;
+    font-size: 200px;
+    color:  black;
+    text-align: center;
+    text-shadow: 20px 20px 15px rgba(255, 255, 255, 0.451);
+}
+.multipletextshadow{
+    font-family: Dejavu sans mono;
+    font-size: 200px;
+    color: black;
+    text-align: center;
+    text-shadow: 25px 20px 15px rgba(111, 6, 124, 0.512),
+                 -25px -20px 15px rgba(13, 165, 112, 0.551);
+}
+/*contoh penerapan linear gradient*/
+.lineargradient{
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    color: white;
+    background-image: linear-gradient(45deg, red 10%, hsla(39, 100%, 51%, 1) 20%, yellow 30%, green 40%, blue 60%, #4B0082 75%, purple 95%); /*linear gradient*/
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+}
+/*contoh penerapan radiant gradient*/
+/*circle*/
+.circle{
+    width: 400px;
+    height: 200px;
+    margin: 50px auto;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+    background-image: radial-gradient(circle closest-side at center center, red 10%, hsla(39, 100%, 51%, 1) 20%, yellow 30%, green 40%, blue 60%, #4B0082 75%, purple 95%);
+}
+/*ellipse*/
+.ellipse{
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+    background-image: radial-gradient(ellipse farthest-side at bottom right, red 10%, hsla(39, 100%, 51%, 1) 20%, yellow 30%, green 40%, blue 60%, #4B0082 75%, purple 95%);
+}
+/*font face*/
+/*pengambilan font dari google*/
+.contohfontgoogle{
+    font-family: 'Inconsolata', monospace;
+    font-size: 48px;
+}
+.contohfontsquirel{
+    font-family: "ChunkFive";
+    font-size: 48px;
+}
+/*web font*/
+.webfont{
+    font-family: 'pt_sansregular';
+    font-size: 48px;
+}
+.blur img{
+    width: 200px;
+    height: 200px;
+    filter: blur(6px);
+}
+.brightness img{
+    width: 200px;
+    height: 200px;
+    filter: brightness(6);
+}
+.contrast img{
+    width: 200px;
+    height: 200px;
+    filter: contrast(6);
+}
+.saturate img{
+    width: 200px;
+    height: 200px;
+    filter: saturate(6);
+}
+.grayscale img{
+    width: 200px;
+    height: 200px;
+    filter: grayscale(1);
+}
+.sepia img{
+    width: 200px;
+    height: 200px;
+    filter: sepia(1);
+}
+.huerotate img{
+    width: 200px;
+    height: 200px;
+    filter: hue-rotate(180deg);
+}
+.invert img{
+    width: 200px;
+    height: 200px;
+    filter: invert(1);
+}
+.opacityfilter img{
+    width: 200px;
+    height: 200px;
+    filter: opacity(.5);
+}
+.dropshadow .text{
+    font-size: 50px;
+    font-weight: bold;
+    filter: drop-shadow(10px 10px 10px white);
+}
+.dropshadow img{
+    width: 200px;
+    height: 200px;
+    filter: drop-shadow(10px 10px 5px black);
+}
+/*transform dan transisi(tidak secara detail, untuk lebih detail cari dibawah materi transform*/
+/*scale*/
+.scalekotak{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 50px auto 0;
+    transition : 1s;
+}
+.scalekotak:hover{
+    transform: scaleX(1) scaleY(2);
+}
+.scale p{
+    font-size: 20px;
+    text-align: center;
+}
+/*rotate*/
+.rotatekotak{
+    width: 200px;
+    height: 200px;
+    background-color: royalblue;
+    margin: 50px auto 0;
+    transition: 1s;/*contoh transisi*/
+}
+.rotatekotak:hover{
+    transform: rotate(180deg) rotateX(180deg) rotateY(180deg);
+}
+.rotate p{
+    font-size: 20px;
+    text-align: center;
+}
+/*skew*/
+.skewkotak{
+    width: 200px;
+    height: 200px;
+    background-color: goldenrod;
+    margin: 50px auto 0;
+    transition: 1s;
+}
+.skewkotak:hover{
+    transform: skewX(30deg) skewY(30deg);
+}
+.skew p{
+    font-size: 20px;
+    text-align: center;
+}
+/*translate*/
+.translatekotak{
+    width: 200px;
+    height: 200px;
+    background-color: greenyellow;
+    margin: 50px auto 0;
+    transition: 1s;
+}
+.translatekotak:hover{
+    transform: translateX(25px) translateY(25px);
+}
+.translate p{
+    font-size: 20px;
+    text-align: center;
+}
+/*transition*/
+.ease{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    transition:transform 1s ease 2s; /*defaultnya adalah all, jika hanya ingin menggunakan properti tertentu yang telah ditulis pada hover, cukup masukkan properti tersebut*/
+}
+.easein{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    transition:transform 1s ease-in 2s;
+}
+.easeout{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    transition:transform 1s ease-out 2s;
+}
+.easeinout{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    transition:transform 1s ease-in-out 2s;
+}
+.linear{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    transition:transform 1s linear 2s;
+}
+.cubicbezier{
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    transition:transform 1s cubic-bezier(0.2, 0.52, 0.69, 0.19) 2s;
+}
+/*properti yang akan digunakan pada transisi*/
+.transisikotak:hover .ease{ /*saat transisikotak disorot, maka transisi akan melakukan transform dsb*/
+    width: 200px; /*tujuannya, agar saat transisi disorot, tidak terlihat macet*/
+    height: 200px;
+    transform: translate(300px) rotate(720deg);
+    background-color: blueviolet;
+}
+.transisikotak:hover .easein{ 
+    width: 200px; 
+    height: 200px;
+    transform: translate(300px) rotate(720deg);
+    background-color: blueviolet;
+}
+.transisikotak:hover .easeout{ 
+    width: 200px; 
+    height: 200px;
+    transform: translate(300px) rotate(720deg);
+    background-color: blueviolet;
+}
+.transisikotak:hover .easeinout{ 
+    width: 200px; 
+    height: 200px;
+    transform: translate(300px) rotate(720deg);
+    background-color: blueviolet;
+}
+.transisikotak:hover .linear{ 
+    width: 200px; 
+    height: 200px;
+    transform: translate(300px) rotate(720deg);
+    background-color: blueviolet;
+}
+.transisikotak:hover .cubicbezier{ 
+    width: 200px; 
+    height: 200px;
+    transform: translate(300px) rotate(720deg);
+    background-color: blueviolet;
+}
+/*animation*/
+@keyframes animation1{
+    0%{
+        background-color: black;
+        margin-left: 2px;
+    }
+    50%{
+        background-color: green;
+        margin-left: 500px;
+    }
+    100%{
+        background-color: purple;
+        margin-left: 1000px;
+    }
+}
+.animation1{
+    width: 100px;
+    height: 100px;
+    margin: 5px 2px 5px;
+    background-color: black;
+    animation: animation1 2s ease-in 0.5s infinite alternate none running; 
+}
+/*
+    syntax css3
+border-radius: membentuk border melengkung dengan radius yang diinginkan
+properti yang dapat digunakan dengan border-radius: border-(top|bottom)-(left-right)-radius: ....px
+urutan syntax border radius: top-left top-right bottom-right bottom-left
+
+opacity digunakan untuk membuat sebuah block transparan
+opacity: ...(skala angka yang digunakan dari 0 hingga 1. (0.0, 0.1, 0.2, 0.3, ..., 1.0) yang mana, 0.1 = 10%
+opacity pada suatu block child ( block didalam suatu block ), akan mengikuti block parent (block yang berada diluar block child )
+sehingga, jika block child 0.5, maka block child memiliki nilai opacity 0.5 terhadap block parent. 
+jika block parent transparan, maka secara otomatis block child juga transparan, walaupun block child disetting tidak transparan
+untuk mengatasi masalah opacity diatas, gunakan syntax "rgba(...,...,...,...) dengan r=red:..., g=green:..., b=blue:..., a=alpha:..., yang mana, alpha ini merupakan tingkat dari opasitas suatu warna 
+selain menggunakan rgba, kita juga bisa menggunakan hsla(...,...,...,...) dengan h=hue:..., s=saturation:..., l=lightness:..., a=alpha:..., yang mana, alpha ini merupakan tingkat dari opasitas suatu warna
+
+box-shadow ini memungkinkan kita untuk memberikan bayangan pada suatu block atau box. 
+properti yang digunakan box-shadow:inset <x-offset> <y-offset> <blur> <spread> <color> "spread dan inset: opsional"
+inset : membuat bayangan yang diatur berada didalam kotak. 
+<x-offset> : mengatur jarak bayangan pada sumbu horizontal. satuan px ( pixel )
+<y-offset> : mengatur jarak bayangan pada sumbu vertikal. satuan yang digunakan px (pixel)
+<blur> : mengatur tingkat blur bayangan. satuan yang digunakan adalah px (pixel)
+<color> : warna bayangan
+<spread> : mengatur ukuran bayangan atau besar bayangan. satuan yang digunakan adalah px (pixel)
+kita juga bisa membuat multiple shadow dengan cara menambahkan koma setelah komponen yang diberikan.
+semisal ingin memberikan 2 bayangan, maka,:
+inset <x-offset> <y-offset> <blur> <spread> <color>, inset <x-offset> <y-offset> <blur> <spread> <color>    
+
+text-shadow memungkinkan kita untuk memberikan bayangan pada text yang kita inginkan
+properti yang digunakan dalam text-shadow ini memiliki kesamaan seperti box, hanya saja text-shadow ini tidak menerima properti inset dan spread
+<x-offset> <y-offset> <blur> <color>
+sama seperti box-shadow, text-shadow juga bisa dibuat sebagai multiple shadow, dengan cara menambahkan "," setelah ketentuan shadow pertama
+
+gradients: teknik memberikan warna gradasi. terdapat dua tipe gradient, pertama linear-gradient dan radial-gradient
+linear-gradient: memberikan gradasi warna secara garis lurus.
+linear-gradient ini sendiri merupakan value yang digunakan untuk background-image.
+syntax linear-gradient = background-image: linear-gradient(<warna-awal>, <warna-2>, <warna-3>, ..., <warna-n>);
+syntax linear-gradient dengan arah = background-image: linear-gradient(<sudut> atau <arah>, <warna-1>, ..., <warna-n>);
+sudut: ....deg
+arah: to <arah>, arah: top, bottom, left, right, left top  right top , left bottom  right bottom 
+untuk memberikan color-stop, yang mana color-stop ini bertujuan untuk menentukan lokasi warna mulai melakukan gradasi, adalah dengan menambahkan lokasi warna terhadap block dalam persen setelah warna yang ditentukan
+color-stop= background-image: linear-gradient(<sudut> atau <arah>, <warna-1><lokasi warna-1 dalam persen>, <warna-2><lokasi warna-2 dalam persen>, <warna-n><lokasi warna-n dalam persen>
+jika ingin memberikan pengulangan pada linear gradient, gunakan syntax repeating-linear-gradient();
+
+radial-gradient: memberikan gradasi warna secara melingkar
+syntax radial-gradient = background-image: radial-gradient(<warna-awal>, <warna-2>, <warna-3>, ..., <warna-n>);
+dari syntax tersebut, warna-awal akan menjadi pusat lingkaran, kemudian dilapisi warna-2 yang dilapisi oleh warna-3 dan dilapisi warna-n
+untuk memberikan color-stop, yang mana color-stop ini bertujuan untuk menentukan lokasi warna mulai melakukan gradasi, adalah dengan menambahkan lokasi warna terhadap block dalam persen setelah warna yang ditentukan
+color-stop= background-image: radiant-gradient(<warna-1><lokasi warna-1 dalam persen>, <warna-2><lokasi warna-2 dalam persen>, <warna-n><lokasi warna-n dalam persen>
+kita juga dapat mensetting tipe radiant-gradient ke bentuk lingkaran (circle) atau lonjong (ellipse)
+syntax yang digunakan: background-image: radiant-gradient(<tipe>, <warna-1><lokasi warna-1 dalam persen>, <warna-2><lokasi warna-2 dalam persen>, <warna-n><lokasi warna-n dalam persen>
+dengan <tipe> = circle atau ellipse
+kita juga dapat memberikan jangkauan atau jarak dari pusat gradient ke sisi terluarnya
+<jangkauan> = closest-corner(jarak dari pusat gradient ke sudut terdekat elemen)
+              closest-side(jarak dari pusat gradient ke sisi terdekat elemen)
+              farthest-corner(jarak dari pusat gradient ke sudut terjauh elemen)
+              farthest-side(jarak dari pusat gradient ke sisi terjauh elemen)
+kemudian, kita juga dapat menentukan sendiri letak dari pusat gradient itu sendiri.
+hal itu dapat dilakukan dengan cara menentukan posisi y sebagai sumbu vertikal dan x sebagai sumbu horizontal
+y = top, center, bottom, ...px
+x = left, center, right, ...px
+sedangkan untuk defaultnya sendiri, posisi <y><x> adalah center center
+berdasarkan syntax diatas, dapat digabungkan menjadi:
+background-image: radiant-gradient(<tipe><jangkauan> at <y><x>, <warna-1><lokasi warna-1 dalam persen>, <warna-2><lokasi warna-2 dalam persen>, <warna-n><lokasi warna-n dalam persen>
+
+@font-face: memungkinkan kita untuk meletakkan font yang kita inginkan namun viewer web kita yang bisa saja tidak memilikinya dan google font juga tidak memilikinya, viewer web kita tersebut
+tetap bisa melihatnya
+format syntax yang digunakan: 
+@font-face{
+    font-family: "namafontyangdiinginkan";
+    src: url(lokasi font. jika satu folder dengan HTML, cukup tuliskan nama saja) format('format font yang digunakan')
+}
+letakkan syntax tersebut diatas atau diawal css. 
+format dari font: ttf, otf, woff dsb. dengan ttf = truetype, otf = opentype
+sedangkan untuk website sendiri, akan lebih bagus dengan memakai font dengan format woff
+cara mengambil font dari web juga bisa dilakukan dengan mengklik font yang diinginkan, kemudian pilih menu webfont kit, checklist pilihan yang diinginkan, semisal ingin memili woff saja, maka unchecklist pilihan yang lain.
+lalu download file tersebut, setelah didownload dan diekstrak, pilih jenis font yang diinginkan. setelah itu salin ke folder web kita berada. pada folder font yang kita temukan sebelumnya, terdapat file css yang berisi format buat font web kita
+salin isi dari file css tersebut ke file css yang akan kita gunakan untuk web kita pada awal baris.
+setelah itu, font tersebut dapat digunakan di web kita
+
+vendor prefix digunakan dengan tujuan website kita tetap tampil dengan optimal, pada hampir semua web browser. yang mana, tidak semua web browser support facility yang ada pada css3
+-webkit- : chrome, Safari, opera new version
+-moz- : firefox
+-ms- : internet explorer / edge
+-o- : opera old version
+syntax : -(webkit|moz|ms|o)-(properti css 3 atau properti css yang tidak support): (pengaturan atau settingan dari properti yang akan digunakan);
+
+filter digunakan untuk memberikan efek visual pada gambar, background, atau border
+syntax yang digunakan adalah= filter: <tipe-filter>;
+<tipe-filter> = blur(px. semakin besar, tingkat blur semakin kuat), 
+                brightness(angka|%. normalnya, secara default, besar angka brightness = 1 atau 100%. lebih dari angka tersebut semakin terang, kurang dari angka tersebut, semakin gelap), 
+                contrast(angka|%. normalnya, secara default, besar angka brightness = 1 atau 100%.), 
+                saturate(angka|%. normalnya, secara default, besar angka brightness = 1 atau 100%.) saturate: untuk mengatur tingkat kecerahan warna, 
+                grayscale(angka|%. kebalikan dari saturate, normal atau secara default, ukurannya adalah 0 atau 0%. semakin besar, maka warna dari gambar akan semakin abu abu), 
+                sepia(angka|%. sama seperti grayscale, bedanya sepia ini akan merubah warna menjadi kekuningan. normalnya atau secara default, ukuran dari sepia adalah 0 atau 0%), 
+                hue-rotate(deg. hue rotate ini akan merotasi atau merubah warna pada gambar berdasarkan derajat dari suatu roda warna), 
+                invert(angka|%. nilai defaultnya adalah 0 atau 0%. semakin besar nilai invert hingga 1 atau 100%, maka gambarnya akan mendekati efek x-ray), 
+                opacity(angka|%) meningkatkan tingkat transparan suatu gambar. beda opacity filter dengan opacity css3 adalah, opacity filter menggunakan kemampuan hardware, sedangkan opacity css3 menggunakan kemampuan web. sehingga, menggunakan filter akan menjadi lebih cepat, 
+                drop-shadow(sama seperti box-shadow). bedanya, drop-shadow akan secara otomatis membuat text menjadi memiliki bayangan. sedangkan box-shadow tidak. sehingga, drop shadow bisa dikatakan merupakan gabungan dari box-shadow dan text-shadow
+filter tersebut bisa digunakan secara bersamaan dengan menggunakan spasi
+contoh sintaks: blur() brightness() contrast() ... drop-shadow();
+
+transform : memungkinkan kita untuk memanipulasi format visual dari elemen html 
+format visual bisa berupa ukuran, bentuk, atau posisi
+transform bisa 2D dan 3D
+syntax= transform: <fungsi>;
+"terhadap x = horizontal, terhadap y = vertikal, z = bidang 3D / depan belakang"
+<fungsi> : scale(memperbesar/memperkecil terhadap x(scaleX) atau terhadap y(scaleY)) satuan yang digunakan berupa angka,: scaleX(..) scaleY(..); dan bisa ditambah dengan scaleZ(...) 
+           rotate(memutar terhadap x(rotateX) atau memutar terhadap y(rotateY), atau keduanya (rotate)) satuan yang digunakan berupa deg, dan bisa ditambah dengan rotateZ(...)
+           skew(membuat condong/miring, terhadap x(skewX) terhadap y(skewY) atau keduanya(skew)) satuan yang digunakan adalah deg, dan bisa ditambah dengan skewZ(...)
+           translate(mengubah posisi terhadap x(translateX) atau terhadap y(translateY)) satuan yang digunakan adalah px, dan bisa ditambah dengan translateZ(...)
+transform tersebut bisa ditumpuk penggunaan-nya
+contoh: transform: <scale> <rotate> <skew> <translate>
+transform-origin memungkinkan kita mengubah posisi suatu box
+transform-origin: (top|bottom|center) (left|center|right) atau (...%) (...%)
+jika ingin menggunakan syntax transform-origin, kita harus mengatur transform terlebih dahulu
+
+transition: pergerakan suatu objek secara halus dan memiliki keadaan awal dan keadaan akhir (2 keadaan)
+syntax: transition: [property] <durasi> [fungsi] [delay]; properti, fungsi, delay opsional. durasi wajib
+durasi : satuan yg dipakai s (detik), ms(mili detik)
+property: menentukan properti yang akan dilakukan oleh transisi
+          properti yang akan digunakan harus dituliskan terlebih dahulu pada hover atau semacamnya
+          all: default (jika tidak menuliskan property, otomatis akan menggunakan properti all)
+          <nama property> : nama property yang telah dijabarkan pada hover
+          none: tidak ada properti yang digunakan dalam transisi
+fungsi transisi atau timing function: pergerakan yang akan dilakukan selama transisi
+properti dari fungsi transisi:
+    - ease: defaultnya adalah ease. cepat disemua awal dan akhir
+    - ease-in: lambat diawal
+    - ease-out: lambat diakhir
+    - ease-in-out: lambat diawal dan akhir
+    - linear: lurus
+    - cubic-bezier(w,x,y,z): animasi yang bisa kita atur, untuk lebih mudah bisa dicek di inspect elemen masing2 browser
+delay: waktu tunggu sebelum menjalankan transisi
+       satuan yang digunakan adalah s(detik) atau ms(milidetik)
+properti pada transisi juga bisa dibuat secara multiple
+syntaxnya: transition: [property] <durasi> [fungsi] [delay], [property] <durasi> [fungsi] [delay], ..., [property] <durasi> [fungsi] [delay];
+
+Animation: pergerakan suatu objek secara halus yang memiliki keadaan awal, keadaan akhir dan keyframe (keadaan diantara keadaan awal dan akhir)
+syntax keyframes :
+@keyframes [nama keyframe yang kita buat]{
+    from atau 0%{
+        [property-css]
+    }
+    ...%{
+        [property-css]
+    }
+    to atau 100%{
+        [property-css]
+    }
+}
+syntax tersebut dituliskan pada bagian manapun di halaman css dari halaman web yang akan kita buat
+untuk menggunakan keyframes tersebut menjadi sebuah animasi, gunakan syntax=
+animation: [nama keyframe yang kita buat] <durasi> [timing function: sama seperti transition] [delay] [iteration-count] [direction] [fill-mode] [play-state]
+[iteration-count] = banyak pengulangan. satuan yang dipakai bisa berupa <angka> atau infinite ( tidak terbatas )
+[direction] = normal(animasi berjalan dari awal hingga akhir) | reverse (berjalan dari akhilr hingga awal) | alternate (berjalan dari awal hingga akhir, kemudian dari akhir ke awal dengan kata lain, bolak balik) | alternate-reverse (dari akhir ke awal, kemudian dari awal ke akhir)
+[fill-mode] = untuk menentukan akhir dari transisinya. none|forwards(animasinya berhenti diakhir, atau tidak berganti ke posisi awal)|backwards|both. 
+[play-state] = running(animasi berjalan) | pause(animasi berhenti atau tidak akan berjalan). playstate ini nantinya akan berguna setelah mempelajari javascript
+
+link syntax
+semisal, <a href="#gws"></a>
+kemudian terdapat sebuah div dengan id="gws" dan class="kelas"
+dengan menuliskan pada css, syntax berikut:
+    .kelas:target{
+        ...properti yang inginkan
+    }
+saat viewer mengklik web pada a href tersebut, maka secara otomatis
+browser akan menjalankan div pada class="kelas" id="gws".
+karena, link dari a itu sendir mengarah ke #gws: id="gws"
+
+pseudo elements
+::first-line = baris pertama dari suatu teks
+::first-letter = huruf pertama dari suatu teks
+::selection = element yang di select oleh user menggunakan mouse (shift + klik kiri)
+::before = memberikan konten sebelum suatu elemen. content: "konten yang diinginkan";
+::after = memberikan konten setelah suatu elemen
+
+word-wrap: <normal|break-word>
+normal: isi dari suatu konten akan berjalan sesuai element html (semisal tidak ada tag <br> atau new line, maka konten bisa saja melewati box yang diberikan)
+break-word: isi dari suatu konten akan berjalan sesuai ukuran width atau lebar dari suatu box konten tersebut berada
+
+//background-size = mengubah ukuran background pada suatu box
+background-size: widthpx heightpx;
+background-size: (contain|cover); contain memaksudkan bahwa ukuran background sesuai atau pas dengan ukuran box
+                                  cover memaksudkan ukuran height background lebih besar dari ukuran box
+
+background-clip = digunakan untuk menentukan area lukisan pada background
+value dari background-clip: border-box = area lukisan pada background dibuat hingga melapisi border pada suatu box
+                            padding-box = area lukisan pada background dibuat hingga melapisi padding saja, border tidak termasuk
+                            content-box = area lukisan pada background dibuat hanya pada sekitar konten, padding dan border tidak termasuk
+
+background-image bisa memiliki dua atau lebih background, syntax:
+background-image: url(gambar1.jpg), url(gambar2.jpg), ..., url(gambarn.jpg);
+dan position dari background tersebut juga dapat diatur.
+background-position: (position gambar 1), (position gambar2), ..., (position gambar n)
+
+
+*/

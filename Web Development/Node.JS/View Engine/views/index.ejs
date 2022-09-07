@@ -1,0 +1,21 @@
+
+    <h1>HELLO, WORLD!</h1>
+    
+    <!--Mendeklarasikan nama variabel, sama seperti syntax javascript-->
+    <% const nama = 'Golden Wise' %>
+    <!--mengeluarkan output dari variabel nama-->
+    <h2>Halo, <%= nama %>!</h2>
+    <!--variabel yang dikirimkan dari javascript-->
+    <h2>Selamat <%= waktu + ', ' + nama %></h2>
+
+    <h4>Daftar Mahasiswa</h4>
+    <!--pengulangan menggunakan express view engine-->
+    <% dataMahasiswa.forEach(e => { %>
+    <ul>
+      <li>Nama: <%= e.nama %></li>
+      <li>Nim: <%= e.nim %></li>
+      <li>Semester: <%= e.semester %></li>
+    </ul>
+    <% }) %>
+  </body>
+</html>

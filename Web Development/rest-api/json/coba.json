@@ -1,0 +1,46 @@
+[
+  {
+    "nama": "Hafiz",
+    "umur": 18,
+    "nim": "105221026",
+    "lulus": false,
+    "hobby": ["coding", "gaming"],
+    "semester": 2,
+    "matakuliah": [
+      {
+        "nama": "TBA",
+        "value": "A"
+      },
+      {
+        "nama": "Sisop",
+        "value": "A-"
+      },
+      {
+        "nama": "Daspro",
+        "value": "A"
+      }
+    ]
+  },
+  {
+    "nama": "Ahmad",
+    "umur": 18,
+    "nim": "105231025",
+    "lulus": false,
+    "hobby": ["coding", "gaming"],
+    "semester": 2,
+    "matakuliah": [
+      {
+        "nama": "Kalkulus",
+        "value": "B"
+      },
+      {
+        "nama": "PTBE",
+        "value": "A-"
+      },
+      {
+        "nama": "CPS",
+        "value": "B+"
+      }
+    ]
+  }
+]

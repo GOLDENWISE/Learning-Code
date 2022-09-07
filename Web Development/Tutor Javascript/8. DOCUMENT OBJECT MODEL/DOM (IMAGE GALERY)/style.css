@@ -1,0 +1,33 @@
+body{
+    background-color: #ccc;
+    text-align: center;
+}
+.container{
+    width: 600px;
+    margin: auto;
+    border: 5px solid white;
+    line-height: 0px;
+    overflow: auto;
+}
+.thumb{
+    width: 200px;
+    float: left;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+.thumb:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+@keyframes animation1{
+    to{
+        opacity: 1;
+    }
+}
+.fade{
+    opacity: 0;
+    animation: animation1 0.5s ease-in-out 0s 1 normal forwards running;
+}
+.active{
+    opacity: 0.5;
+}

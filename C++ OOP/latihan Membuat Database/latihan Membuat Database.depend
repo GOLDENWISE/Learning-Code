@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1657362147 source:c:\users\legion\documents\latihan membuat database\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+
+1657370458 source:d:\dev\c++ oop\latihan membuat database\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+

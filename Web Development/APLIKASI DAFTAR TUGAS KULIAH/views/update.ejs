@@ -1,0 +1,21 @@
+<main>
+    <h2 class="mt-5 text-primary">UPDATE TUGAS</h2>
+    <p class="text-info"=>Ganti data-data berikut untuk mengganti tugas</p>
+    <form method="post" action="/update" class="mt-3">
+        <input type="hidden" name="index" value="<%= index %>" />
+        <div class="mb-3">
+            <label for="matakuliah" class="form-label">Nama Mata Kuliah</label>
+            <input type="text" class="form-control" name="matkul" id="matakuliah" placeholder="Masukkan nama Matkul" required value="<%= obj.matkul %> "/>
+        </div>
+        <div class="mb-3">
+            <label for="deadline" class="form-label">Deadline Tugas</label>
+            <input type="text" class="form-control" name="deadline" id="deadline"  placeholder="Masukkan deadline tugas" required value="<%= obj.deadline %> " />
+        </div>
+        <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi Tugas</label>
+            <textarea type="" class="form-control" name="deskripsi" id="deskripsi"  aria-describedby="info" placeholder="Masukkan deskripsi" required></textarea>
+            <div id="info" class="form-text">Isi data deskripsi bisa berupa tempat pengumpulan, hal yang perlu dilakukan, dan sebagainya</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</main>

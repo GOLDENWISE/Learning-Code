@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATRIBUT IMG DAN SEJENISNYA</title>
+  </head>
+  <body>
+    <!--
+        ATRIBUT IMG:
+        src: atribut yang digunakan untuk menunjukkan lokasi gambar
+        alt: alternative text -> deskripsi dari gambar atau text yang ditampilkan jika gambar tidak tertampilkan
+        width & height: menentukan ukuran gambar
+        title: informasi tambahan yang akan muncul saat mouse hover ke gambar, digunakan sebagai tambahan dari alt   
+        sizes: 
+    -->
+    <img src="small.jpg" srcset="small.jpg 500w, medium.jpg 700w, Large.jpg 1000w" alt="Struktur HTML" />
+    <!--
+      figure: tipe gambar yang memiliki caption dibagian bawahnya
+      untuk menambahkan caption pada gambar, dapat menggunakan tag figcaption
+    -->
+    <figure>
+      <img src="small.jpg" alt="Struktur HTML" />
+      <figcaption>Struktur HTML</figcaption>
+    </figure>
+    <!--
+      Picture: menampilkan gambar secara khusus pada lebar yang berbeda
+      mirip seperti penggunaan srcset, namun lebih flexible
+    -->
+    <picture>
+      <!--media digunakan untuk mengatur kapan suatu gambar ditampilkan-->
+      <!--srcset digunakan untuk menampilkan gambar yang ditampilkan sesuai kriteria pada media-->
+      <!--vw = satuan ukuran web-->
+      <source media="(min-width: 1000px)" srcset="Large.jpg" sizes="50vw" />
+      <source media="(min-width: 800px)" srcset="medium.jpg" />
+      <img src="small.jpg" alt="struktur html" />
+    </picture>
+  </body>
+</html>
