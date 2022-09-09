@@ -40,4 +40,6 @@ $data = file_get_contents('coba.json');
 $mahasiswa = json_decode($data, true); //true=array, false=object
 var_dump($mahasiswa);
 
+//menyimpan data ke json
+//file_put_contents('namafilejson', variabelyangtelahdiencodedenganjson);
 ?>
