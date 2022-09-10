@@ -29,6 +29,7 @@ echo strlen("Hafiz")."<br>";
 $berisi = "adaIsi";
 $kosong = "";
 //strcmp(). built-in function yang digunakan untuk membandingkan dua string
+//array_unique(variabel array yang akan diambil data yang berbeda) : function yang digunakan untuk mengambil data yang tidak sama pada suatu array
 //explode('delimiterataupemecah', variabelyangingindipecah). memecah string menjadi array
 //implode('delimiteratauperantara', variabelyangingindigabung). mengabungkan suatu array menjadi string
 //htmlspecialchars(). function khusus untuk menjaga website kita dari hacker contohnya
