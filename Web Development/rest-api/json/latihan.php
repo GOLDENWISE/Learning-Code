@@ -14,7 +14,7 @@ $mahasiswa = [
 var_dump($mahasiswa);
 echo "<br>";
 echo "<br>";
-//membuat format suatu data menjadi json => json_encode(datayangakandiubah)
+//membuat format suatu data menjadi json => json_encode(datayangakandiubah, parameteroptional) *contoh parameter optional: JSON_PRETTY_PRINT: parameter untuk membuat encoding json dilakukan dengan rapi (tidak datar)
 $data = json_encode($mahasiswa);
 echo $data;
 
