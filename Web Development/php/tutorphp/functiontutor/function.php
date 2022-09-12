@@ -29,7 +29,9 @@ echo strlen("Hafiz")."<br>";
 $berisi = "adaIsi";
 $kosong = "";
 //strcmp(). built-in function yang digunakan untuk membandingkan dua string
-//explode(). memecah string menjadi array
+//array_unique(variabel array yang akan diambil data yang berbeda) : function yang digunakan untuk mengambil data yang tidak sama pada suatu array
+//explode('delimiterataupemecah', variabelyangingindipecah). memecah string menjadi array
+//implode('delimiteratauperantara', variabelyangingindigabung). mengabungkan suatu array menjadi string
 //htmlspecialchars(). function khusus untuk menjaga website kita dari hacker contohnya
 //isset(). function untuk memeriksa apakah suatu variabel sudah pernah dibikin atau tidak
 //empty(). function yang digunakan untuk memeriksa apakah suatu variabel kosong atau berisi

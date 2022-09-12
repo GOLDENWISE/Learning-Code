@@ -1,0 +1,36 @@
+// $this->load->dbforge(); //load library dbforge (untuk menjalankan metadata (buat table, menambahkan fields)
+        // $fields = [
+        //     'id' => [
+        //         'type'=>'INT', //type data dari field
+        //         'auto_increment' => TRUE //auto increment? TRUE = autoincrement, FALSE = not autoincrement
+        //     ],
+        //     'username' => [
+        //         'type'=>'VARCHAR', 
+        //         'constraint'=>'10' //banyak data atau karakter dari field
+        //     ],
+        //     'password' => [
+        //         'type'=>'VARCHAR',
+        //         'constraint'=>'10'
+        //     ],
+        //     'email' => [
+        //         'type'=>'VARCHAR',
+        //         'constraint'=>'50'
+        //     ],
+        //     'namatable' => [
+        //         'type'=>'VARCHAR',
+        //         'constraint'=>'10'
+        //     ],
+        // ]; //aturan pemberian field: 
+        // variabel penyimpan data field = [
+        //                             'namafield' => [ 
+        //                                   'type'|'autoincrement'|'constraint' => 'ketentuan yang diberikan, penjelasan seperti diatas', aturan field lainnya,
+        //                                    ...
+        //                              ], 
+        //                              field lainnya=>[
+        //                                    ...
+        //                              ],
+        //                              ...
+        //  ];
+        // $this->dbforge->add_field($fields); //memasukkan field / set field. syntax $this->dbforge->add_field(variabel yang menyimpan data berupa deskripsi field dan field yang dimasukkan ke table)
+        // $this->dbforge->add_key('id', TRUE); //set primary key *jika hanya set key, jangan tambahkan parameter. syntax --> $this->dbforge->add_key('namafieldyangdiberikanprimarykeyataukey', primary key = true || abaikan )
+        // $this->dbforge->create_table('Datauser'); //create table berdasarkan key yang telah diset syntax -> $this->dbforge->create_table(namatableyangdiinginkan)
