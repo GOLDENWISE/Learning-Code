@@ -2,9 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ATRIBUT IMG DAN SEJENISNYA</title>
+    <title>HTML 5</title>
   </head>
   <body>
     <!--
@@ -36,5 +34,48 @@
       <source media="(min-width: 800px)" srcset="medium.jpg" />
       <img src="small.jpg" alt="struktur html" />
     </picture>
+    <br />
+    <h1>AUDIO</h1>
+    <figure>
+      <figcaption>Judul lagu: "Seafret - Atlantis"</figcaption>
+      <audio controls loop preload autoplay>
+        <source src="Seafret - Atlantis (Lyrics).mp3" type="audio/mpeg" />
+      </audio>
+      <!--src: source audio
+            controls: memberikan controllers (play, pause, mute, speed, dsb) ke user
+            preload: membuat audio diload sebelum dijalankan
+            autoplay: membuat audio mulai berjalan secara otomatis
+            loop: membuat audio bermain terus menerus
+            muted: membuat audio tidak bersuara
+            selain menggunakan src, kita juga bisa menggunakan tag source untuk mengupload file audio dengan tipe yang berbeda
+          -->
+    </figure>
+    <br />
+    <h1>VIDEO</h1>
+    <figure>
+      <figcaption>Seafret - Atlantis</figcaption>
+      <video width="400" height="225" poster="poster.webp" preload controls>
+        <source src="Seafret - Atlantis (Lyrics).mp4" type="video/mp4" />
+        <track src="subtitle.vtt" kind="subtitles" srclang="en" title="Bahasa Indonesia" />
+      </video>
+    </figure>
+    <!--src: source video
+        controls: memberikan controllers (play, pause, mute, speed, dsb) ke user
+        poster: menampilkan gambar jika video tidak tampil
+        preload: membuat video diload sebelum dijalankan
+        autoplay: membuat video mulai berjalan secara otomatis
+        loop: membuat video bermain terus menerus
+        muted: membuat video tidak bersuara
+        width: menentukan lebar video
+        height: menentukan panjang video
+        selain menggunakan src, kita juga bisa menggunakan tag source untuk mengupload file video dengan tipe yang berbeda
+        <track> tag html yang berguna sebagai pendukung video
+          src: source file untuk track
+          kind: jenis track(subtitle, caption, chapter, description)
+          title: judul dari caption atau track
+          srclang: code bahasa
+          untuk track, diwajibkan untuk menggunakan extensi file.vtt 
+          untuk penulisan file.vtt, untuk pengimplementasian dapat dilihat di file subtitle.vtt
+        -->
   </body>
 </html>
