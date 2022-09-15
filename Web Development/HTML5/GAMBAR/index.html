@@ -183,5 +183,76 @@
 
             selain itu, daftar list penyedia svg adalah: blobmaker, svgrepo, shapedivider, getwaves, simpleicons
       -->
+    <form action="" method="post" autocomplete="off">
+      <div>
+        <label for="nama">Masukkan nama: </label>
+        <input type="text" name="nama" id="nama" autofocus required minlength="2" maxlength="5" />
+      </div>
+      <div>
+        <label for="email">Masukkan email: </label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div>
+        <label for="tel">Masukkan No.Hp: </label>
+        <input type="tel" name="tel" id="tel" />
+      </div>
+      <div>
+        <label for="url">Masukkan Website: </label>
+        <input type="url" name="url" id="url" />
+      </div>
+      <div>
+        <label for="number">Masukkan NIM: </label>
+        <input type="number" name="number" id="number" min="10" max="100" step="5" />
+      </div>
+      <div>
+        <label for="range">Masukkan Angka: </label>
+        <input type="range" name="range" id="range" />
+      </div>
+      <div>
+        <label for="date">Masukkan Tanggal: </label>
+        <input type="date" name="date" id="date" />
+      </div>
+      <div>
+        <label for="time">Masukkan waktu: </label>
+        <input type="time" name="time" id="time" />
+      </div>
+      <div>
+        <label for="month">Masukkan bulan: </label>
+        <input type="month" name="month" id="month" />
+      </div>
+      <div>
+        <label for="week">Masukkan minggu: </label>
+        <input type="week" name="week" id="week" />
+      </div>
+      <div>
+        <label for="color">Masukkan warna: </label>
+        <input type="color" name="color" id="color" />
+      </div>
+      <div>
+        <button type="submit">Kirim</button>
+      </div>
+    </form>
+    <!--
+      Form validation
+      type: email=validasi khusus email, tel=validasi khusus nomor telepon, url=validasi khusus alamat suatu website
+            number=validasi khusus menyimpan angka, range=membuat suatu slider (bisa digeser dan menghasilkan suatu angka berdasarkan range yang diberikan)
+            datetime picker=untuk menentukan tanggal, color picker=untuk memilih warna
+      Attribute: autocomplete(untuk menghilangkan history inputan(jika nilai attributenya adalah off. secara default on). bisa dimasukkan ditag input atau tag form)='off(untuk mematikan fitur) | on(menghidupkan fitur)'
+                 autofocus(membuat kursor otomatis berada pada form tersebut saat baru pertama kali masuk. attribut ini hanya boleh ada satu pada satu form)
+                 required(membuat inputan wajib diisi)
+                 minlength & maxlength(untuk menentukan panjang inputan karakter yang diinputkan)
+                 min & max(untuk menentukan nilai diantara minimal dan maximal)
+                 step(untuk mengambil inputan sesuai kelipatan yang ditentukan)
+                 pattern(untuk menentukan pola dari inputan menggunakan regex(regular expression))
+      Regular expression: 
+      wildcard(.), membuat suatu kata cocok dengan karakter apapun. (cth n.p : nap, nip, nup, nep, nop, ntp, ...)
+      optionaly(?), membuat suatu huruf sebelumnya bersifat optional(perlu ada atau tidak). cth(e-?mail -> hasil bisa berupa e-mail atau email)
+      Repeatability(+ atau *), membuat suatu karakter sebelum tanda ini terdapat pengulangan (+ melakukan pengulangan berdasarkan huruf/karakter sebelum simbol diberikan(coo+l: cool, coool, cooool, ...))
+                               (* melakukan pengulangan berdasarkan huruf/karakter sebelum simbol diberikan, namun jika terdapat karakter yang sama sebelum karakter yang terletak sebelum simbol, maka akan dimulai dari satu terlebih dahulu (coo*l: col, cool, coool, ...))
+      Choice([pilihan]), membuat pola pilihan. cth([n, i, k]: kata yang dihasilkan hanya berkisar nik, kin, nki, ikn, kni, ink, ...)
+      Range(-) digunakan untuk menunjukkan suatu range
+      complementation(^), membuat makna kebalikan atau negasi. cth(^[aiueo]: karakter abcd selain aiueo atau huruf konsonan)
+      common special symbol(^regex$). ^selain sebagai negasi, ^bisa berguna sebagai penanda dari awal sebuah baris
+    -->
   </body>
 </html>
