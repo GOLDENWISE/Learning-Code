@@ -3,6 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <title>HTML 5</title>
+    <style>
+      svg {
+        display: block;
+        margin: 20px;
+        background-color: #eee;
+      }
+      .satu {
+        background-color: #ddd;
+        width: 300px;
+        height: 300px;
+      }
+      .kotak {
+        fill: green; /* warna pada svg */
+        width: 100px;
+        height: 100px;
+        /*menentukan posisi kotak berdasarkan kordinat x dan y*/
+        /*Posisi kordinat relatif terhadap svg*/
+        x: 100px;
+        y: 100px;
+      }
+      .transparent {
+        background-color: transparent;
+      }
+    </style>
   </head>
   <body>
     <!--
@@ -38,7 +62,7 @@
     <h1>AUDIO</h1>
     <figure>
       <figcaption>Judul lagu: "Seafret - Atlantis"</figcaption>
-      <audio controls loop preload autoplay>
+      <audio controls loop preload autoplay muted>
         <source src="Seafret - Atlantis (Lyrics).mp3" type="audio/mpeg" />
       </audio>
       <!--src: source audio
@@ -77,5 +101,87 @@
           untuk track, diwajibkan untuk menggunakan extensi file.vtt 
           untuk penulisan file.vtt, untuk pengimplementasian dapat dilihat di file subtitle.vtt
         -->
+    <br />
+    <!--contoh svg dengan satu objek-->
+    <svg class="satu" viewBox="0 0 300 300">
+      <!--rect: tag html5 untuk membuat kotak atau rectangle-->
+      <rect class="kotak" />
+    </svg>
+    <!--svg dengan berbagai objek-->
+    <svg width="150" height="150">
+      <rect width="100" height="100" fill="lightblue" />
+      <circle r="50" cx="50" cy="50" fill="salmon" />
+      <rect width="70" height="70" x="15" y="15" fill="#333" />
+    </svg>
+    <!--svg dengan path-->
+    <svg>
+      <!--stroke: atribut untuk warna border-->
+      <!--path absolute-->
+      <path
+        fill="none"
+        stroke="black"
+        d="M 60, 10
+         L 110, 90
+         H 10
+         L 60, 10"
+      />
+      <!--path relatif terhadap posisi terakhir-->
+      <path
+        fill="none"
+        stroke="blue"
+        d="m 170, 10
+          l 50, 80
+          h -100
+          l 50, -80"
+      />
+    </svg>
+    <svg>
+      <!--path melengkung-->
+      <path
+        fill="none"
+        stroke="salmon"
+        d="M 10, 90
+         C 30,90 25,10, 50,10
+         S 70,90 90,90"
+      />
+    </svg>
+    <!--contoh svg dari figma-->
+    <svg width="292" height="284" viewBox="0 0 292 284" fill="none" class="transparent">
+      <ellipse cx="145.635" cy="141.967" rx="120" ry="163.735" transform="rotate(47.5159 145.635 141.967)" fill="#401C1C" />
+      <path d="M154 16L188.891 82.181L254.812 99.6089L210.455 157.939L216.305 234.891L154 204.76L91.6948 234.891L97.5453 157.939L53.188 99.6089L119.109 82.181L154 16Z" fill="#DF1717" />
+    </svg>
+
+    <!--
+        <svg></svg>: Scalable Vector Graphics
+        keunggulan dari svg: gambar yang dihasilkan bersifat scalability atau tidak akan rusak jika diperbesar (sehingga bisa digunakan untuk pc, handphone dengan kualitas yang sama)
+                             bisa diberikan interactive (hover, transisi, animasi contohnya)
+                             mudah diedit
+                             dibandingkan dengan gambar bitmap(jpg,png), svg ukurannya sangat kecil
+        Bentuk yang dapat dihasilkan dengan svg: Rectangle(kotak), circle(lingkaran), line(garis), ellipse(oval), Polyline(garis yang banyak), polygon(garis yang menutup dan membentuk bidang), Path(garis yang dibentuk tidak hanya lurus. dengan kata lain bisa melengkung) 
+        attribut svg: viewBox="kordinatx kordinaty width height" *kordinatx dan kordinaty relatif terhadap window
+                              viewBox merupakan attribut yang memiliki fungsi untuk menampilkan posisi dari suatu svg
+        <rect /> : kotak 
+        <circle /> : lingkaran -> r = jari - jari, cx= kordinat x pada pusat lingkaran, cy=kordinat y pada pusat lingkaran
+        <ellipse /> : ellipse atau oval -> hampir sama seperti circle, hanya saja pada ellipse memiliki 2 jenis jari jari, yaitu rx: ukuran jari-jari horizontal dan ry: ukuran jari jari vertikal
+        <path /> : membuat bangun datar berdasarkan alur yang dibuat
+          syntax path:
+            d="Atribut path yang akan dijalankan": attribut yang berguna untuk mendefinisikan alur garis
+            Atribut path yang akan dijalankan:
+              MoveTo: M, m => titik awal garis. syntax M kordinatxpertama, kordinatypertama
+              LineTo: L (x,y), l(x,y), H y, h y, V x, v x ==> L | l: garis lurus, H | h: garis horizontal, V | v: garis vertikal
+              Cubic Bezier Curve: C,c, S, s.
+              Quadratic Bezier curve: Q, q, T, t
+              Elliptical Arc Curve: A, a 
+            pada syntax diatas, perbedaan huruf kapital dan huruf kecil adalah, huruf kapital bersifat absolute atau kordinat kartesius
+            huruf kecil bersifat relatif terhadap posisi terakhir dari suatu titik. namun, dalam kasus titik awal, m dan M itu sama sama bersifat absolute
+            nilai kordinat bisa positif dan negatif (positif ke kanan atau searah dengan posisi sebelumnya, negatif ke kiri atau berlawanan dengan posisi sebelumnya)*vertikal
+                                                    (positif ke bawah atau searah dengan posisi sebelumnya, negatif ke atas atau berlawanan dengan posisi sebelumnya)*horizontal
+            pengimplementasian dapat dilihat diatas.
+            untuk dokumentasi lebih jelas dapat dilihat didokumentasi mozila: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d
+
+            dan juga, svg selain kita buat sendiri, kita juga bisa mendapatkannya dari figma (dengan membuat di figma shape yang kita inginkan, kemudian klik kanan pada element yang dibuat, copy as svg)
+
+            selain itu, daftar list penyedia svg adalah: blobmaker, svgrepo, shapedivider, getwaves, simpleicons
+      -->
   </body>
 </html>
