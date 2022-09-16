@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage</title>
+    <style>
+      .dark-mode {
+        background-color: #222;
+        color: #fff;
+      }
+      a {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1></h1>
+    <a href="" onclick="gantiNama()">Ganti Nama</a>
+    <a href="" onclick="hapusNama()">Hapus Nama</a>
+    <a href="" class="toggle">Dark Mode</a>
+    <a href="" onclick="hapusStorage()">Hapus Storage</a>
+    <script>
+      const judul = document.querySelector("h1");
+
+      //mengambil data dari localStorage
+      let nama = localStorage.getItem("nama");
+      if (!nama) {
+        nama = prompt("Masukkan nama: ");
+        localStorage.setItem("nama", nama);
+      }
+
+      //menyimpan ke local storage
+      judul.innerHTML = `Halo, ${nama}!`;
+
+      const gantiNama = (e) => {
+        nama = prompt("Masukkan nama baru anda: ");
+        localStorage.setItem("nama", nama);
+        e.preventDefault();
+      };
+
+      const hapusNama = (e) => {
+        localStorage.clear();
+        e.preventDefault();
+      };
+
+      const hapusStorage = (e) => {
+        localStorage.removeItem("nama");
+        e.preventDefault();
+      };
+
+      const toggle = document.querySelector(".toggle");
+      let tema = localStorage.getItem("tema");
+      const darkMode = () => {
+        document.body.classList.add("dark-mode");
+        toggle.innerHTML = "Light Mode";
+        localStorage.setItem("tema", "dark");
+      };
+      const lightMode = () => {
+        document.body.classList.remove("dark-mode");
+        toggle.innerHTML = "Dark Mode";
+        localStorage.setItem("tema", "light");
+      };
+      if (!tema) {
+        localStorage.setItem("tema", "light");
+      }
+      if (tema == "dark") {
+        darkMode();
+      }
+
+      toggle.addEventListener("click", (e) => {
+        tema = localStorage.getItem("tema");
+        if (tema == "light") {
+          darkMode();
+        } else {
+          lightMode();
+        }
+        e.preventDefault();
+      });
+    </script>
+    <!--localStorage & sessionStorage 
+        property:
+          setItem(key, value)-menyimpan key dan value 
+          getItem(key)-mengambil value berdasarkan key
+          removeItem(key)-menghapus value dan key berdasarkan key
+          clear()-menghapus semua data pada storage
+          key(index)-mengambil nilai key berdasarkan index
+          length-mengetahui jumlah nilai yang ada pada storage
+        Property diatas, harus digunakan di javascript
+        perbedaan localStorage dan sessionStorage yang paling dasar adalah, localStorage tersimpan di storage web, sehingga, walaupun tab browser diclose, datanya tetap tersedia
+        sedangkan sessionStorage, saat tab browser diclose, data pada sessionStorage terhapus
+    -->
+  </body>
+</html>
