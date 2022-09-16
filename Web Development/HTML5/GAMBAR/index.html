@@ -26,6 +26,16 @@
       .transparent {
         background-color: transparent;
       }
+      /*pseudoclass css untuk memberikan style jika inputan invalid*/
+      input:invalid {
+        border: none;
+        outline: 2px solid red; /*outline=border, hanya berlaku untuk form*/
+      }
+      input:valid,
+      input:required {
+        border: 1px solid black;
+        outline: inherit;
+      }
     </style>
   </head>
   <body>
@@ -186,15 +196,17 @@
     <form action="" method="post" autocomplete="off">
       <div>
         <label for="nama">Masukkan nama: </label>
-        <input type="text" name="nama" id="nama" autofocus required minlength="2" maxlength="5" />
+        <!--untuk memberikan pesan jika validasi gagal, gunakan syntax oninvalid="this.setCustomValidity('pesan gagal')"-->
+        <!--dan jika pesan sedang diisi, agar pesan validasi tidak ditampilkan, gunakan syntax oninput=this.setCustomValidity('')-->
+        <input type="text" name="nama" id="nama" autofocus required minlength="2" maxlength="5" oninvalid="this.setCustomValidity('Nama harus diisi')" oninput="this.setCustomValidity('')" />
       </div>
       <div>
         <label for="email">Masukkan email: </label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" pattern="^([A-Za-z]*)[0-9]{1,5}?@([A-Za-z]*).(com)$" />
       </div>
       <div>
         <label for="tel">Masukkan No.Hp: </label>
-        <input type="tel" name="tel" id="tel" />
+        <input type="tel" name="tel" id="tel" pattern="^(\+62|62|0)8[1-9][0-9]{6,10}$" />
       </div>
       <div>
         <label for="url">Masukkan Website: </label>
@@ -206,7 +218,9 @@
       </div>
       <div>
         <label for="range">Masukkan Angka: </label>
-        <input type="range" name="range" id="range" />
+        <span class="min"></span>
+        <input type="range" name="range" id="range" min="0" max="100" step="5" />
+        <span class="max"></span>
       </div>
       <div>
         <label for="date">Masukkan Tanggal: </label>
@@ -227,11 +241,31 @@
       <div>
         <label for="color">Masukkan warna: </label>
         <input type="color" name="color" id="color" />
+        <span class="idencolor"></span>
       </div>
       <div>
         <button type="submit">Kirim</button>
       </div>
     </form>
+
+    <script>
+      const slider = document.querySelector("#range");
+      const min = document.querySelector(".min");
+      const max = document.querySelector(".max");
+      min.innerHTML = slider.min;
+      max.innerHTML = slider.value;
+      slider.addEventListener("input", () => {
+        max.innerHTML = slider.value;
+      });
+
+      const warna = document.querySelector("#color");
+      const iden = document.querySelector(".idencolor");
+      iden.innerHTML = warna.value;
+      warna.addEventListener("input", () => {
+        iden.innerHTML = warna.value;
+        iden.style.color = warna.value;
+      });
+    </script>
     <!--
       Form validation
       type: email=validasi khusus email, tel=validasi khusus nomor telepon, url=validasi khusus alamat suatu website
@@ -253,6 +287,8 @@
       Range(-) digunakan untuk menunjukkan suatu range
       complementation(^), membuat makna kebalikan atau negasi. cth(^[aiueo]: karakter abcd selain aiueo atau huruf konsonan)
       common special symbol(^regex$). ^selain sebagai negasi, ^bisa berguna sebagai penanda dari awal sebuah baris
+      untuk menentukan minimal atau maximal pada regex, gunakan {min, max}
+      selain menggunakan tanda ? untuk pilihan, kita juga dapat menggunakan (\pilihan1|pilihan2|...)
     -->
   </body>
 </html>
