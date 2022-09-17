@@ -1,0 +1,100 @@
+.container {
+  width: 600px;
+  height: 400px;
+  border: 5px solid #333;
+  margin: 30px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: stretch;
+}
+.container div {
+  width: 100px;
+  background-color: rgb(19, 133, 255);
+  margin: 2px;
+  flex-grow: 1;
+}
+
+.satu {
+  order: 7;
+  align-self: flex-start;
+}
+.container div.dua {
+  order: 1;
+  flex-grow: 2;
+}
+.tiga {
+  order: 8;
+  align-self: center;
+}
+.empat {
+  order: 2;
+}
+.lima {
+  order: 9;
+}
+.enam {
+  order: 3;
+}
+.container div.tujuh {
+  flex-grow: 2;
+  order: 6;
+  align-self: stretch;
+}
+.delapan {
+  order: 4;
+}
+.sembilan {
+  order: 5;
+  align-self: flex-end;
+}
+
+//property pada container:
+//untuk menggunakan flexbox, gunakan display flex di element parent atau bisa disebut dengan container
+
+//flex-direction: row | row-reverse | column | column-reverse => menentukan arah flex: row(kiri ke kanan), row-reverse(kanan ke kiri), column(atas ke bawah), column-reverse(bawah ke atas)
+//  gunakan juga flex direction ini pada element parent atau container. secara default, flex direction yang digunakan adalah row
+
+//flex-wrap: nowrap | wrap | wrap-reverse => untuk mengatur element pada suatu container jika element tersebut sudah tidak muat pada container tersebut pada barisnya
+//nowrap: secara default, flex-wrap yang digunakan adalah nowrap, yang mana pada attribut ini jika element tidak muat pada container, elemen lain akan diperkecil ukurannya sedemikian sehingga elemen baru tersebut muat pada container tersebut
+//wrap: pada attribut ini, jika suatu element tidak muat pada container, maka elemen tersebut akan dipindahkan kebaris baru.
+//wrap-reverse: pada attribut ini, mirip seperti wrap, hanya saja element terbaru akan diposisikan dibaris paling atas, sedangkan element terlama akan diposisikan dibaris paling bawah
+
+//justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly => berguna untuk memposisikan suatu item pada container sama rata atau tidak berantakan secara horizontal
+//flex-start: membuat elemen atau item pada container mepet ke kiri
+//flex-end: membuat elemen atau item pada container mepet ke kanan
+//center: membuat elemen atau item pada container mepet ke tengah secara horizontal
+//space-between: membuat elemen atau item pada container memiliki margin-left pada item paling kiri mepet ke kiri dan margin-right pada item paling kanan mepet ke kanan, dan margin-left dan margin-right dari item paling tengah itu sama
+//space-around: membuat elemen atau item pada container memiliki margin-left pada item paling kiri dan margin-right pada item paling kanan itu sama. dan margin-left dan margin-right dari item paling tengah itu sama
+//space-evenly: membuat semua elemen atau item pada container memiliki margin-left dan margin-right yang sama
+
+//align-items: flex-start | flex-end | center | stretch | baseline => berguna untuk memposisikan suatu item pada container sama rata atau tidak berantakan secara vertikal
+//flex-start: membuat elemen atau item pada container mepet ke atas
+//flex-end: membuat elemen atau item pada container mepet ke bawah
+//center: membuat elemen atau item pada container mepet ke tengah secara vertikal
+//stretch: membuat element atau item pada container mepet ke atas dan bawah(seolah - olah memiliki tinggi yang sama) dengan syarat masing - masing elemen pada container tidak diberikan property height
+//baseline: membuat text pada semua element pada container sejajar
+
+//align-content: flex-start | flex-end | center | scretch | space-between | space-around => sama seperti align-items, hanya saja berlaku kepada container yang memiliki lebih dari 1 baris
+//flex-start: membuat elemen atau item pada container mepet ke atas
+//flex-end: membuat elemen atau item pada container mepet ke bawah
+//center: membuat elemen atau item pada container mepet ke tengah secara vertikal
+//stretch: membuat element atau item pada container mepet ke atas dan bawah(seolah - olah memiliki tinggi yang sama) dengan syarat masing - masing elemen pada container tidak diberikan property height
+//space-between: membuat elemen atau item pada container memiliki margin-top pada item paling atas mepet ke atas dan margin-bottom pada item paling bawah mepet ke bawah, dan margin-top dan margin-bottom dari item paling tengah itu sama
+//space-around: membuat elemen atau item pada container memiliki margin-top pada item paling atas dan margin-bottom pada item paling bawah itu sama. dan margin-top dan margin-bottom dari item paling tengah itu sama
+
+//property pada items:
+//order: untuk mengatur urutan pada setiap elemen items (start - end = 1 - ...)
+
+//flex-grow: membuat ukuran elemen (jika 1, maka semua elemen akan memenuhi container(dengan syarat, nilai flex-grow diberikan ke semua elemen). jika 2, maka elemen yang diberikan flex-grow ini akan memiliki ukuran 2x lipat dari ukuran elemen yang sejajar dengan elemen tersebut, begitu juga seterusnya)
+
+//align-self: auto | flex-start | flex-end | center | baseline | stretch => sama seperti align-items pada property dicontainer, hanya saja align-self diberikan khusus untuk elemen yang ada pada container
+//flex-start: membuat elemen atau item yang diberikan align self mepet ke atas pada barisnya
+//flex-end: membuat elemen atau item yang diberikan align self mepet ke bawah pada barisnya
+//center: membuat elemen atau item yang diberikan align self mepet ke tengah pada barisnya
+//baseline: membuat text pada semua element yang diberikan align self jenis ini sejajar pada barisnya
+//stretch: membuat element atau item yang diberikan align self jenis ini mepet ke atas dan bawah(seolah - olah memiliki tinggi yang sama) dengan syarat masing - masing elemen pada container tidak diberikan property height
+//auto: default align self yang ada pada flex
