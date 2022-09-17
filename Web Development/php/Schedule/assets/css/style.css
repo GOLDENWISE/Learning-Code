@@ -1,0 +1,8 @@
+.hover-this {
+	transition: 0.5s;
+}
+.hover-this:hover {
+	box-shadow: -2px 2px 0px 0.5px #0d6efd, -2px -2px 0px 0.5px #0d6efd,
+		2px -2px 0px 0.5px #0d6efd, 2px 2px 0px 0.5px #0d6efd;
+	transform: scaleX(1.1) scaleY(1.1);
+}
