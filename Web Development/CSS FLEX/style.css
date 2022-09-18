@@ -90,6 +90,7 @@
 //order: untuk mengatur urutan pada setiap elemen items (start - end = 1 - ...)
 
 //flex-grow: membuat ukuran elemen (jika 1, maka semua elemen akan memenuhi container(dengan syarat, nilai flex-grow diberikan ke semua elemen). jika 2, maka elemen yang diberikan flex-grow ini akan memiliki ukuran 2x lipat dari ukuran elemen yang sejajar dengan elemen tersebut, begitu juga seterusnya)
+//penulisan syntax flex-grow juga dapat diganti dengan flex
 
 //align-self: auto | flex-start | flex-end | center | baseline | stretch => sama seperti align-items pada property dicontainer, hanya saja align-self diberikan khusus untuk elemen yang ada pada container
 //flex-start: membuat elemen atau item yang diberikan align self mepet ke atas pada barisnya
