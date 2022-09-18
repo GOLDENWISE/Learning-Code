@@ -7,6 +7,7 @@ body {
   text-align: center;
   font-weight: bold;
   color: white;
+  background-color: black;
 }
 
 .container {
@@ -57,14 +58,84 @@ footer {
   background-color: #666;
 }
 
+.container-2 {
+  width: 60%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  grid-auto-flow: column;
+  grid-template-rows: 150px 100px;
+  grid-auto-columns: 100px;
+}
+
+.item {
+  background-color: rgb(138, 209, 254);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item:nth-child(even) {
+  background-color: rgb(255, 142, 142);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.gallery {
+  width: 80%;
+  margin: auto;
+  padding: 0;
+  border: 10px solid white;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
 /* penjelasan syntax */
-/* 
+/*
+istilah pada grid
+grid container: elemen pembungkus grid, untuk mendefinisikannya, tuliskan display: grid; pada suatu element html (tag, .class, #id, dan semacamnya)
+grid item: elemen yang ada pada container yang telah didefinisikan sebagai grid container
+grid line: garis horizontal (kolom) atau vertikal (baris) yang memisahkan item grid menjadi beberapa bagian (ditandai dengan angka jika dilihat pada grid inspector).
+grid cell: satu potongan dari berbagai perpotongan baris dan kolom pada grid yang sebelumnya telah dipisahkan oleh grid line
+grid area: kumpulan dari grid cell yang membentuk kotak
+grid track: ukuran dari satu grid cell secara horizontal ataupun vertikal (satuan fr)
+grid gap: jarak antara grid cell dengan grid cell yang lain
+
 property yang digunakan pada container
   grid-template-areas: memberikan templates area dengan nama yang ditentukan
-  grid-template-columns: memberikan ukuran setiap area kolom, satuan yang digunakan adalah fr (fraction)
-  grid-template-rows: memberikan ukuran setiap area baris, satuan yang digunakan adalah fr (fraction)
-property yang digunakan pada masing masing item pada container
+  grid-template-columns: track-size ... | nameline track-size ... => ukuran memberikan ukuran setiap track columns, satuan yang digunakan adalah fr (fraction) px (pixel), %(persen), auto.
+  grid-template-rows: track-size ... | nameline track-size .. => memberikan ukuran track setiap rows, satuan yang digunakan adalah fr (fraction) px (pixel), %(persen), auto(ukuran yang diambil merupakan sisa dari total ukuran baris yang terpakai pada container).
+  pada grid-template-columns | rows, jika yang dituliskan hanya track-size saja, maka hal yang akan dibuat pada grid tersebut adalah membuat banyak columns pada berdasarkan banyak ukuran yang ditulis. (cth, grid-template-columns: 15px 20px 25px => 3 columns.)
+  sedangkan pada grid template rows, hanya mengatur satu baris yang ditentukan saja. (cth, grid-templates-rows: 20px => hanya mengatur baris pertama dengan ukuran 20px. sisanya mengikuti ukuran secara default atau implisit)
+  
+  untuk mengatur ukuran default baris atau kolom, gunakan syntax grid-auto-columns pada kolom atau grid-auto-rows pada baris 
+  grid-auto-columns: track-size;
+  grid-auto-rows: track-size;
+
+  grid-auto-flow: row | column | row dense | column dense => mengatur penempatan item pada grid track, secara otomatis (cth: grid-auto-flow: column; jika row yang didefinisikan hanya 2 saja dan item yang ada pada container lebih dari 2, maka item tersebut akan diisi berdasarkan row yang didefinisikan terlebih dahulu, 
+  untuk kemudian, sisa dari item tersebut akan ditambahkan ke kolom, begitu seterusnya) (pada flex, bisa disebut sebagai flex-direction). secara default, nilainya adalah row
+  
+  special function & keyword: 
+    repeat(banyakpengulangan, track-size): digunakan untuk menentukan grid track secara berulang. biasa digunakan saat menentukan grid-template-column atau grid-template-rows. yang mana, banyak pengulangan akan berbanding lurus dengan banyak pendefinisan
+    
+    min-content & max-content: digunakan untuk menentukan besar ukuran grid track (horizontal atau vertikal) berdasarkan content pada suatu item. biasa digunakan saat menentukan grid-template-column atau grid-template-rows
+      min-content: besar ukuran grid track akan digunakan seminimal mungkin. semisal content pada suatu item terdapat dua kata(dipisahkan dengan spasi), maka ukuran content akan diambil berdasarkan panjang huruf pada kata yang paling panjang. sedangkan kata lainnya akan diposisikan dibaris baru di item yang sama 
+      max-content: besar ukuran grid track akan digunakan semaximal mungkin. semisal content pada suatu item terdapat dua kata(dipisahkan dengan spasi), dua kata tersebut akan berada dibaris yang sama. sehingga, ukuran dari item tersebut akan menyesuaikan panjang dari dua kata tersebut, begitu juga jika banyak katanya lebih dari yang disebutkan tersebut 
+    
+    minmax(ukuranminimal, ukuranmaximal): digunakan untuk menentukan ukuran minimal dan maximal dari grid track(biasa digunakan pada grid-template-columns atau grid-template-rows)
+      semisal ukuranmaximal suatu track mencukupi pada container, saat ukuran container diperkecil, maka track yang diberikan properti minmax ini akan mengecil hingga nilai minimal. jika telah mencapat nilai minimal, maka track tersebut akan berhenti mengecil 
+      properti minmax ini juga bisa digunakan pada keyword repeat
+
+    auto-fill & auto-fit: menentukan jumlah item pada grid track (biasa digunakan pada keyword repeat=> repeat(auto-fill | auto-fit, track-size))
+    biasanya, keyword ini berguna untuk membuat website responsive. semisal, ukuran container dapat diisi 3 item setiap barisnya. saat ukuran baris container diperbesar, maka item pada container yang dibawah akan naik ke atas secara otomatis. begitu juga sebaliknya, jika ukuran container diperkecil, maka item yang ada diatas pada container akan dipindahkan kebawah       
+    perbedaan auto-fill dan auto-fit adalah, jika item pada container sedikit, namun container menyisakan satu track yang sebenarnya cukup untuk diisi kolom lain, oleh auto-fill akan dianggap bahwa sisa dari track tersebut terpakai, sehingga area gridnya akan ada hingga area sisa track tersebut. berbeda dengan auto-fill, auto-fit akan menganggap bahwa area tersebut tidak ada, sehingga grid-area akan berhenti pada item terakhir pada container tersebut
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  property yang digunakan pada masing masing item pada container
   grid-area: memberikan nama area pada suatu tag, class, id, dsb
+
 
 untuk pengimplementasiannya dapat dilihat diatas penjelasan ini
 */
