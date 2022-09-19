@@ -1,0 +1,44 @@
+header {
+  background-color: salmon;
+}
+header h1 {
+  font-size: 3rem;
+}
+header p {
+  color: royalblue;
+}
+
+body {
+  background-color: lightblue;
+}
+
+.main {
+  background-color: red;
+  color: white;
+}
+.container .main {
+  font-weight: bolder;
+}
+.main .main-heading {
+  font-size: 2em;
+}
+.main .main-paragraph {
+  font-size: 1.4em;
+}
+.main:hover {
+  background-color: salmon;
+}
+
+.footer .footer-heading {
+  font-size: 2em;
+}
+.footer .footer-paragraph {
+  font-size: 1.4em;
+}
+
+.main h1,
+.main p,
+footer h1,
+footer p {
+  letter-spacing: 1px;
+}/*# sourceMappingURL=main.css.map */
