@@ -110,6 +110,19 @@ property yang digunakan pada container
   pada grid-template-columns | rows, jika yang dituliskan hanya track-size saja, maka hal yang akan dibuat pada grid tersebut adalah membuat banyak columns pada berdasarkan banyak ukuran yang ditulis. (cth, grid-template-columns: 15px 20px 25px => 3 columns.)
   sedangkan pada grid template rows, hanya mengatur satu baris yang ditentukan saja. (cth, grid-templates-rows: 20px => hanya mengatur baris pertama dengan ukuran 20px. sisanya mengikuti ukuran secara default atau implisit)
   
+  gunakan grid-template untuk mempersingkat syntax diatas
+  cth: grid-template-rows: 50px 100px
+       grid-template-columns: 1fr 2fr
+       grid-template-areas: 'header header header' 'footer footer footer'
+       |
+       v
+       grid-template: 'header header header' 50px 'footer footer footer' 100px / 1fr 2fr
+  syntax=> grid-template: grid-template-areasrow1 grid-template-rows1 grid-template-areasrow2 grid-template-rows2 ... / grid-templates-columns1 grid-templates-columns2 ... 
+  
+  column-gap: jarak antar kolom cell
+  row-gap: jarak antar baris cell
+  gap: jarak antar kolom dan baris cell => gap: row-gap column-gap; 
+
   untuk mengatur ukuran default baris atau kolom, gunakan syntax grid-auto-columns pada kolom atau grid-auto-rows pada baris 
   grid-auto-columns: track-size;
   grid-auto-rows: track-size;
