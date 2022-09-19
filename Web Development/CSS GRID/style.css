@@ -60,12 +60,19 @@ footer {
 
 .container-2 {
   width: 60%;
-  margin: 50px auto;
+  margin: 50px 35px;
+  height: 600px;
   display: grid;
-  grid-template-columns: repeat(5, 200px);
+  background-color: white;
+  grid-template-columns: repeat(4, 200px);
   grid-auto-flow: column;
-  grid-template-rows: 150px 100px;
+  grid-template-rows: 150px 150px 150px;
   grid-auto-columns: 100px;
+  gap: 5px 4px;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: space-evenly;
 }
 
 .item {
@@ -102,6 +109,7 @@ grid cell: satu potongan dari berbagai perpotongan baris dan kolom pada grid yan
 grid area: kumpulan dari grid cell yang membentuk kotak
 grid track: ukuran dari satu grid cell secara horizontal ataupun vertikal (satuan fr)
 grid gap: jarak antara grid cell dengan grid cell yang lain
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 property yang digunakan pada container
   grid-template-areas: memberikan templates area dengan nama yang ditentukan
@@ -114,8 +122,8 @@ property yang digunakan pada container
   cth: grid-template-rows: 50px 100px
        grid-template-columns: 1fr 2fr
        grid-template-areas: 'header header header' 'footer footer footer'
-       |
-       v
+        |
+        v
        grid-template: 'header header header' 50px 'footer footer footer' 100px / 1fr 2fr
   syntax=> grid-template: grid-template-areasrow1 grid-template-rows1 grid-template-areasrow2 grid-template-rows2 ... / grid-templates-columns1 grid-templates-columns2 ... 
   
@@ -145,8 +153,50 @@ property yang digunakan pada container
     biasanya, keyword ini berguna untuk membuat website responsive. semisal, ukuran container dapat diisi 3 item setiap barisnya. saat ukuran baris container diperbesar, maka item pada container yang dibawah akan naik ke atas secara otomatis. begitu juga sebaliknya, jika ukuran container diperkecil, maka item yang ada diatas pada container akan dipindahkan kebawah       
     perbedaan auto-fill dan auto-fit adalah, jika item pada container sedikit, namun container menyisakan satu track yang sebenarnya cukup untuk diisi kolom lain, oleh auto-fill akan dianggap bahwa sisa dari track tersebut terpakai, sehingga area gridnya akan ada hingga area sisa track tersebut. berbeda dengan auto-fill, auto-fit akan menganggap bahwa area tersebut tidak ada, sehingga grid-area akan berhenti pada item terakhir pada container tersebut
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  property yang digunakan pada masing masing item pada container
+    justify-items: start | end | center | stretch: mensejajarkan grid-item pada sumbu horizontal
+    start: semua grid-items pada grid akan mepet ke kiri grid-tracknya masing masing dan ukuran tracknya menyesuaikan ukuran content yang ada pada grid-item
+    end: semua grid-items pada grid akan mepet ke kanan grid-tracknya masing masing dan ukuran tracknya menyesuaikan ukuran content yang ada pada grid-item
+    center: semua grid-items pada grid akan mepet ke tengah-tengah grid-tracknya masing masing dan ukuran tracknya menyesuaikan ukuran content yang ada pada grid-item
+    stretch: sisi kanan dan kiri dari grid-items akan menempel ke sisi kanan dan kiri grid-tracknya masing masing (dengan syarat, masing-masing grid-items tidak memiliki lebar yang didefinisikan)
+
+    align-items: start | end | center | stretch: sama seperti justify-items, hanya saja align-items pada sumbu vertikal
+    start: semua grid-items pada grid akan mepet ke atas grid-tracknya masing masing dan ukuran tracknya menyesuaikan ukuran content yang ada pada grid-item
+    end: semua grid-items pada grid akan mepet ke bawah grid-tracknya masing masing dan ukuran tracknya menyesuaikan ukuran content yang ada pada grid-item
+    center: semua grid-items pada grid akan mepet ke tengah-tengah grid-tracknya masing masing dan ukuran tracknya menyesuaikan ukuran content yang ada pada grid-item
+    stretch: sisi bawah dan atas dari grid-items akan menempel ke sisi atas dan bawah grid-tracknya masing masing (dengan syarat, masing-masing grid-items tidak memiliki tinggi yang didefinisikan)
+
+    place-items: align-items justify-items => shorthand yang digunakan untuk mensejajarkan item secara horizontal
+    jika align-items dan justify-items yang akan kita tentukan memiliki posisi yang sama (sama sama start atau end atau stretch atau center), 
+    maka, pada place-items cukup tuliskan salah satu properti (start | end | stretch | center).
+    namun jika berbeda, masing - masing properti harus dipisahkan dengan spasi
+
+    justify-content: mengatur posisi seluruh grid-container secara horizontal (dengan syarat ukuran total grid-items < ukuran grid-container dan ukuran grid-container telah ditentukan(width))
+    justify-content: start | end | center | stretch | space-around | space-between | space-evenly
+    start: semua grid-items pada grid-container akan mepet ke kiri grid-container dan akan membentuk suatu grid area
+    end: semua grid-items pada grid-container akan mepet ke kanan grid-container dan akan membentuk suatu grid-area
+    center: semua grid-items pada grid-container akan mepet ke tengah-tengah grid-container secara horizontal dan akan membentuk suatu grid-area
+    stretch: sisi kanan dari grid-items paling kanan akan menempel ke sisi kanan grid-container dan sisi kiri dari grid-items paling kiri akan menempel ke sisi kiri grid-container dan akan membentuk suatu grid-area
+    space-around: memberikan jarak antara grid-itemsnya. dengan jarak dari grid-items paling kanan dengan sisi kanan container sama dengan jarak antara grid-items paling kiri dengan sisi kiri grid-container. dan jarak grid-items paling kiri dan paling kanan ke grid-items sebelahnya akan sama dengan 2 kali lipat dari jarak grid-items paling kiri ke sisi kiri atau jarak grid-items paling kanan ke sisi kanan
+    space-between: memberikan jarak antara grid-itemsnya. dengan sisi kanan dari grid-items paling kanan menempel dengan sisi kanan grid-container dan sisi kiri dari grid-items paling kiri menempel dengan sisi kiri grid-container. sedangkan sisa ruang yang tersedia pada grid container secara horizontal akan dibagi rata sebagai jarak antar grid-items paling kanan dengan grid-items selanjutnya dan grid-items paling kiri dengan grid-items selanjutnya
+    space-evenly: jarak yang diberikan antara sisi kanan dari grid-items paling kanan dengan sisi kanan grid-container, sisi kiri dari grid-items paling kiri dengan sisi kiri grid-container dan jarak antar grid-itemsnya pada container itu sama besar secara horizontal
+    
+    align-content: mengatur posisi seluruh grid-container secara vertikal (dengan syarat ukuran total grid-items < ukuran grid-container dan ukuran grid-container telah ditentukan(height))
+    align-content: start | end | center | stretch | space-around | space-between | space-evenly
+    start: semua grid-items pada grid-container akan mepet ke atas grid-container dan akan membentuk suatu grid area
+    end: semua grid-items pada grid-container akan mepet ke bawah grid-container dan akan membentuk suatu grid-area
+    center: semua grid-items pada grid-container akan mepet ke tengah-tengah grid-container secara vertikal dan akan membentuk suatu grid-area
+    stretch: sisi atas dari grid-items paling atas akan menempel ke sisi atas grid-container dan sisi bawah dari grid-items paling bawah akan menempel ke sisi bawah grid-container dan akan membentuk suatu grid-area
+    space-around: memberikan jarak antara grid-itemsnya. dengan jarak dari grid-items paling atas dengan sisi atas container sama dengan jarak antara grid-items paling bawah dengan sisi bawah grid-container. dan jarak grid-items paling bawah dan paling atas ke grid-items diatas atau dibawahnya akan sama dengan 2 kali lipat dari jarak grid-items paling bawah ke sisi bawah atau jarak grid-items paling atas ke sisi atas
+    space-between: memberikan jarak antara grid-itemsnya. dengan sisi atas dari grid-items paling atas menempel dengan sisi atas grid-container dan sisi bawah dari grid-items paling bawah menempel dengan sisi bawah grid-container. sedangkan sisa ruang yang tersedia pada grid container secara vertikal akan dibagi rata sebagai jarak antar grid-items paling atas dengan grid-items dibawahnya dan grid-items paling bawah dengan grid-items diatasnya
+    space-evenly: jarak yang diberikan antara sisi atas dari grid-items paling atas dengan sisi atas grid-container, sisi bawah dari grid-items paling bawah dengan sisi bawah grid-container dan jarak antar grid-itemsnya pada container itu sama besar secara vertikal
+
+    place-content: align-content justify-content => shorthand yang digunakan untuk mensejajarkan item secara vertikal
+    jika align-content dan justify-content yang akan kita tentukan memiliki posisi yang sama (sama sama start atau end atau stretch atau center), 
+    maka, pada place-content cukup tuliskan salah satu properti (start | end | stretch | center | space-around | space-between | space-evenly).
+    namun jika berbeda, masing - masing properti harus dipisahkan dengan spasi
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  
+property yang digunakan pada masing masing item pada container
   grid-area: memberikan nama area pada suatu tag, class, id, dsb
 
 
