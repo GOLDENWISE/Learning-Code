@@ -32,6 +32,7 @@ header {
   align-items: center;
   background-color: #b063d8;
 }
+
 aside {
   grid-area: aside;
   display: flex;
@@ -39,6 +40,7 @@ aside {
   align-items: center;
   background-color: #2f93ff;
 }
+
 nav {
   grid-area: nav;
   display: flex;
@@ -46,12 +48,14 @@ nav {
   align-items: center;
   background-color: #e45765;
 }
+
 main {
   grid-area: main;
   line-height: 300px;
   background-color: #e0aa77;
   box-sizing: border-box;
 }
+
 footer {
   grid-area: footer;
   padding: 20px 0;
@@ -64,7 +68,7 @@ footer {
   height: 600px;
   display: grid;
   background-color: white;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(3, 200px) [akhir] 200px;
   grid-auto-flow: column;
   grid-template-rows: 150px 150px 150px;
   grid-auto-columns: 100px;
@@ -75,12 +79,44 @@ footer {
   align-content: space-evenly;
 }
 
+.v1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-self: start;
+  align-self: start;
+}
+
+.v2 {
+  grid-area: 1 / 2 / span 1 / span 1;
+  justify-self: end;
+  align-self: end;
+}
+
+.v3 {
+  grid-row-start: -4;
+  grid-row-end: span -1;
+  grid-column-start: -3;
+  grid-column-end: span 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.v4 {
+  grid-row: 1 / span 1;
+  grid-column-start: akhir;
+  grid-column-end: span 1;
+  place-self: stretch; //align-self: stretch dan justify-self: stretch;
+}
+
 .item {
   background-color: rgb(138, 209, 254);
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
+
 .item:nth-child(even) {
   background-color: rgb(255, 142, 142);
 }
@@ -99,6 +135,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
+
 /* penjelasan syntax */
 /*
 istilah pada grid
@@ -113,8 +150,8 @@ ________________________________________________________________________________
 
 property yang digunakan pada container
   grid-template-areas: memberikan templates area dengan nama yang ditentukan
-  grid-template-columns: track-size ... | nameline track-size ... => ukuran memberikan ukuran setiap track columns, satuan yang digunakan adalah fr (fraction) px (pixel), %(persen), auto.
-  grid-template-rows: track-size ... | nameline track-size .. => memberikan ukuran track setiap rows, satuan yang digunakan adalah fr (fraction) px (pixel), %(persen), auto(ukuran yang diambil merupakan sisa dari total ukuran baris yang terpakai pada container).
+  grid-template-columns: track-size ... | [nameline] track-size ... => ukuran memberikan ukuran setiap track columns, satuan yang digunakan adalah fr (fraction) px (pixel), %(persen), auto.
+  grid-template-rows: track-size ... | [nameline] track-size .. => memberikan ukuran track setiap rows, satuan yang digunakan adalah fr (fraction) px (pixel), %(persen), auto(ukuran yang diambil merupakan sisa dari total ukuran baris yang terpakai pada container).
   pada grid-template-columns | rows, jika yang dituliskan hanya track-size saja, maka hal yang akan dibuat pada grid tersebut adalah membuat banyak columns pada berdasarkan banyak ukuran yang ditulis. (cth, grid-template-columns: 15px 20px 25px => 3 columns.)
   sedangkan pada grid template rows, hanya mengatur satu baris yang ditentukan saja. (cth, grid-templates-rows: 20px => hanya mengatur baris pertama dengan ukuran 20px. sisanya mengikuti ukuran secara default atau implisit)
   
@@ -170,7 +207,7 @@ property yang digunakan pada container
     maka, pada place-items cukup tuliskan salah satu properti (start | end | stretch | center).
     namun jika berbeda, masing - masing properti harus dipisahkan dengan spasi
 
-    justify-content: mengatur posisi seluruh grid-container secara horizontal (dengan syarat ukuran total grid-items < ukuran grid-container dan ukuran grid-container telah ditentukan(width))
+    justify-content: mengatur posisi seluruh content pada grid-container secara horizontal (dengan syarat ukuran total grid-items < ukuran grid-container dan ukuran grid-container telah ditentukan(width))
     justify-content: start | end | center | stretch | space-around | space-between | space-evenly
     start: semua grid-items pada grid-container akan mepet ke kiri grid-container dan akan membentuk suatu grid area
     end: semua grid-items pada grid-container akan mepet ke kanan grid-container dan akan membentuk suatu grid-area
@@ -180,7 +217,7 @@ property yang digunakan pada container
     space-between: memberikan jarak antara grid-itemsnya. dengan sisi kanan dari grid-items paling kanan menempel dengan sisi kanan grid-container dan sisi kiri dari grid-items paling kiri menempel dengan sisi kiri grid-container. sedangkan sisa ruang yang tersedia pada grid container secara horizontal akan dibagi rata sebagai jarak antar grid-items paling kanan dengan grid-items selanjutnya dan grid-items paling kiri dengan grid-items selanjutnya
     space-evenly: jarak yang diberikan antara sisi kanan dari grid-items paling kanan dengan sisi kanan grid-container, sisi kiri dari grid-items paling kiri dengan sisi kiri grid-container dan jarak antar grid-itemsnya pada container itu sama besar secara horizontal
     
-    align-content: mengatur posisi seluruh grid-container secara vertikal (dengan syarat ukuran total grid-items < ukuran grid-container dan ukuran grid-container telah ditentukan(height))
+    align-content: mengatur posisi seluruh content pada grid-container secara vertikal (dengan syarat ukuran total grid-items < ukuran grid-container dan ukuran grid-container telah ditentukan(height))
     align-content: start | end | center | stretch | space-around | space-between | space-evenly
     start: semua grid-items pada grid-container akan mepet ke atas grid-container dan akan membentuk suatu grid area
     end: semua grid-items pada grid-container akan mepet ke bawah grid-container dan akan membentuk suatu grid-area
@@ -198,7 +235,45 @@ ________________________________________________________________________________
   
 property yang digunakan pada masing masing item pada container
   grid-area: memberikan nama area pada suatu tag, class, id, dsb
+  selain berfungsi untuk memberikan nama area, grid-area juga dapat digunakan sebagai shorthand untuk grid-column-start|end dan grid-row-start|end
+  grid-area: name | row-start / column-start / row-end / column-end
 
+  untuk penggunaan grid ini, disarankan menggunakan visualisasi dari mozila firefox
+  grid-column-start:mulai dari kolom apa  -|
+  grid-column-end:berakhir di kolom apa - -|
+  grid-row-start:mulai dari baris apa  -- -|--> menentukan tempat dari grid-item dengan mengacu pada nomor atau nama grid line yang spesifik
+  grid-row-end:berakhir dibaris apa ----- -|
+  grid-column-start | grid-column-end | grid-row-start | grid-row-end: <nomor> | <nama> | span <nomor> | span <nama> | auto; 
+  <nomor>|<nama> : mengacu pada nomor atau nama yang kita beri pada grid line
+  span <nomor>: item akan memanjang / melebar sampai sejumlah nomor yang diberikan
+  dengan kata lain, jika menuliskan nomor atau nama akan sampai pada area yang dituju
+  namun jika ditambahkan dengan keyword span, maka areanya akan bertambah hingga nilai yang ditentukan atau nama yang ditentukan
+  dengan keyword span, jika -1 maka berkurang 1, jika 1, maka memanjang sebanyak 1 
+  untuk penulisan shorthandnya, adalah dengan syntax grid-column: grid-column-start /grid-column-end untuk grid-column, dan grid-row: grid-row-start / grid-row-end untuk grid-row
+
+  justify-self: mengatur posisi item yang ada pada sebuah cell terhadap sumbu horizontal
+  justify-self: start | end | center | stretch
+  start: posisi item pada cell akan dempet ke sisi kiri suatu cell
+  end: posisi item pada cell akan dempet ke sisi kanan suatu cell
+  center: posisi item pada cell akan dempet ke tengah secara horizontal pada suatu cell
+  stretch: suatu konten atau item pada suatu cell akan memenuhi ukuran cell secara horizontal
+  secara default, ukuran yang digunakan adalah stretch atau ukuran yang telah ditetapkan pada justify-items
+  justify-self ini sama dengan justify-items, hanya saja perbedaannya adalah justify-self berlaku hanya pada properti yang diberikan pada item
+  sedangkan justify-items berlaku untuk seluruh item pada container dan tidak diberikan property justify-self
+  
+  align-self: mengatur posisi item yang ada pada sebuah cell terhadap sumbu horizontal
+  align-self: start | end | center | stretch
+  start: posisi item pada cell akan dempet ke sisi atas suatu cell
+  end: posisi item pada cell akan dempet ke sisi bawah suatu cell
+  center: posisi item pada cell akan dempet ke tengah secara vertikal pada suatu cell
+  stretch: suatu konten atau item pada suatu cell akan memenuhi ukuran cell secara vertikal
+  secara default, ukuran yang digunakan adalah stretch atau ukuran yang telah ditetapkan pada align-items
+  align-self ini sama dengan align-items, hanya saja perbedaannya adalah align-self berlaku hanya pada properti yang diberikan pada item
+  sedangkan align-items berlaku untuk seluruh item pada container dan tidak diberikan property align-self
+
+  place-self: align-self justify-self
+  gunakan place-self sebagai shorthand atau penulisan singkat dari align-self dan justify-self
+  jika nilai yang diberikan pada align-self dan justify-self sama, maka cukup cantumkan satu nilai properti saja pada place-self
 
 untuk pengimplementasiannya dapat dilihat diatas penjelasan ini
 */
