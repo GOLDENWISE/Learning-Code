@@ -1,0 +1,22 @@
+:root {
+  --primary-color: #f4f1de;
+  --secondary-color: #f2cc8f;
+  --text-color: #e07a5f;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.container .header h1 {
+  background-color: green;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: bolder;
+}
+.container .header p {
+  color: red;
+  text-align: center;
+  font-weight: bolder;
+  background-color: orange;
+}/*# sourceMappingURL=main.css.map */

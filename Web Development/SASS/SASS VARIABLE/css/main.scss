@@ -1,0 +1,46 @@
+// CSS VARIABLES
+:root {
+  --primary-color: #f4f1de;
+  --secondary-color: #f2cc8f;
+  --text-color: #e07a5f;
+}
+
+body {
+  //untuk mengambil nilai dari variabel pada css, gunakan keyword var(--namavariable)
+  background-color: var(--primary-color);
+}
+
+// SASS VARIABLES
+//variabel global
+$text-color: red;
+//variabel tipe map, pada bahasa pemrograman lain seperti php, js disebut sebagai array asosiatif
+$alert: (
+  "danger": red,
+  "success": green,
+  "warning": orange,
+);
+.container {
+  .header {
+    //variabel lokal (hanya bisa diakses oleh elemen yang ada pada class header)
+    $align-text: center;
+    h1 {
+      //variable lokal (hanya bisa diakses oleh h1
+      $background-color: green;
+      //membuat variabel lokal menjadi global atau bisa diakses oleh class lain diluar class header
+      $font-weight: bolder !global;
+      background-color: $background-color;
+      color: var(--text-color);
+      text-align: $align-text;
+      font-weight: $font-weight;
+    }
+
+    p {
+      //menggunakan variabel sass
+      color: $text-color;
+      text-align: $align-text;
+      font-weight: $font-weight;
+      //gunakan map-get(namavariabeltipemap, key);
+      background-color: map-get($alert, "warning");
+    }
+  }
+}
