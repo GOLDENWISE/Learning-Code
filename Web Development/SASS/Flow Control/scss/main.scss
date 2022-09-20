@@ -1,0 +1,126 @@
+@mixin profile-pic($size, $circle: false) {
+  width: $size;
+  height: $size;
+  border: 5px solid white;
+  box-shadow: 1px 1px 3px rgba($color: #000, $alpha: 0.3);
+  //pengkondisian
+  //@if kondisibenar { halyangdilakukanjikabenar } @else if kondisiyangdiberikanjikakondisiifsalah {kondisi yang dilakukan jika terpenuhi} @else {kondisi jika tidak terpenuhi}
+  @if $circle {
+    border-radius: 50%;
+  }
+}
+
+$lightbg: #eaeaea;
+$light-text: #333;
+$darkbg: #999;
+$dark-text: #ddd;
+
+@mixin color-mode($light-mode: true) {
+  @if $light-mode {
+    background-color: $lightbg;
+    color: $light-text;
+  } @else {
+    background-color: $darkbg;
+    color: $dark-text;
+  }
+}
+
+@mixin triangle($size, $color, $direction) {
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  background-color: transparent;
+  border-style: solid;
+  border-width: calc($size / 2); //gunakan calc(operasihitung) untuk melakukan operasi aritmatika
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else {
+    border-right-color: $color;
+  }
+}
+
+.right {
+  @include triangle(4em, black, right);
+}
+
+body {
+  min-height: 1000px;
+}
+
+.square-profile {
+  @include profile-pic(200px);
+}
+
+.circle-profile {
+  @include profile-pic(80px, $circle: true);
+}
+
+.nav {
+  @include color-mode($light-mode: false);
+}
+
+//pengulangan
+//for
+
+// $color: green;
+// .gradient {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+//   //@for $variabeliterator from nilaiiteratormulaiberapa to nilaiiteratorhinggaberapa {pengulangan yang dilakukan}
+//   @for $i from 1 to 11 {
+//     //gunakan #{namaiterator/variabel}, untuk membuat variabeliterator atau variabelbiasa dapat diakses oleh css
+//     li:nth-child(#{$i}) {
+//       padding: 4px;
+//       //lighten(warna, gradasi(satuanpersen)): membuat warna yang ditentukan semakin terang berdasarkan gradasi yang ditentukan
+//       //darken(warna, gradasi(satuanpersen)): membuat warna yang ditentukan semakin gelap berdasarkan gradasi yang ditentukan
+//       background-color: lighten($color, calc($i * 3%));
+//     }
+//   }
+// }
+
+//while
+
+$color: green;
+.gradient {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  $i: 1;
+  //@while kondisipengulangan { pengulangan yang dilakukan; (halyangbergunauntukmenghentikanpengulangan(bisa operasi tambah iterator, operasi pengurangan iterator, mengubah true menjadi false, dsb)}
+  @while $i < 11 {
+    //gunakan #{namaiterator/variabel}, untuk membuat variabeliterator atau variabelbiasa dapat diakses oleh css
+    li:nth-child(#{$i}) {
+      padding: 4px;
+      //lighten(warna, gradasi(satuanpersen)): membuat warna yang ditentukan semakin terang berdasarkan gradasi yang ditentukan
+      //darken(warna, gradasi(satuanpersen)): membuat warna yang ditentukan semakin gelap berdasarkan gradasi yang ditentukan
+      background-color: lighten($color, calc($i * 3%));
+    }
+    $i: calc($i + 1);
+  }
+}
+
+//each
+$social-colors: (
+  "youtube": #ff0000,
+  "facebook": #3b5998,
+  "twitter": #1da1f2,
+  "instagram": #ffbf34,
+  "twitch": #8134af,
+);
+
+.socials {
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  //@each $key, $value in $variabelbertipemap{operasi yang dilakukan setiap isi dari variabel bertipe map}
+  @each $social, $color in $social-colors {
+    .#{$social} {
+      color: $color;
+    }
+  }
+}
