@@ -1,0 +1,21 @@
+//memanggil file _mixin.scss yang berisi mixin pada file utama
+//gunakan syntax @import 'namafolder(jikaditempatkanpadasuatufolder)/namafiletanpaunderscoredantanpaekstensi'
+// @import "modules/mixin";
+// @import "modules/header";
+// @import "modules/container";
+// @import "modules/footer";
+// @import "modules/mixin", "modules/header", "modules/container", "modules/footer";
+
+//penggunaan @import tidak disarankan
+//alasannya: karena @import ini membuat variabel dalam suatu modules dapat diakses secara global
+//sehingga, jika seandainya framework lain yang misalnya kita dapatkan memiliki variabel yang sama
+//maka variabel dari framework yang kita dapatkan bisa saja tercampur
+//kemudian, dengan menggunakan import, waktu eksekusinya menjadi lebih besar
+
+//disarankan menggunakan @use, dengan tujuan variabel yang ada pada setiap module tidak dapat diakses secara global
+@use "modules/header";
+@use "modules/container";
+@use "modules/footer";
+
+//tips compile pada terminal:
+//syntax: sass directoryscss directorycss

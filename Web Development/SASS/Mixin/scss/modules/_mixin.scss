@@ -1,0 +1,19 @@
+//@mixin pada bahasa pemrograman lain, bisa disebut sebagai function
+//syntax => @mixin namamixin(){...}.    *()optional
+//mixin tanpa argumen
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+//mixin dengan argumen dengan nilai default
+@mixin flex-box($direction: row, $justify: start, $align: start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

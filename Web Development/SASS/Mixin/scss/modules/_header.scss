@@ -1,0 +1,15 @@
+//@use "namafiletanpaunderscoredantanpaextensi" as aliasyangdiberikan; *(as aliasyangdiberikan) optional
+@use "mixin" as m;
+.header ul {
+  //untuk memanggil mixin, gunakan @include namamixin(). *()untuk pemanggilan, buka dan tutup kurung wajib ada
+  //gunakan syntax @include namafile/namaaliasyangdiberikan.namamixinyangdipanggil(). yang mana, gunanya untuk mengakses mixin di file yang terpisah (dengan syarat, mixin tersebut telah dimasukkan ke css menggunakan syntax @use)
+  @include m.inline-list();
+  li {
+    background-color: black;
+    padding: 0.7em;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
