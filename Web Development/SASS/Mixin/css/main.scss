@@ -1,0 +1,57 @@
+//@mixin pada bahasa pemrograman lain, bisa disebut sebagai function
+//syntax => @mixin namamixin(){...}.    *()optional
+//mixin tanpa argumen
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+}
+
+.header ul {
+  //untuk memanggil mixin, gunakan @include namamixin(). *()untuk pemanggilan, buka dan tutup kurung wajib ada
+  @include inline-list();
+  li {
+    background-color: black;
+    padding: 0.7em;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.footer ul {
+  @include inline-list();
+  li {
+    padding: 0.4em;
+    background-color: rgb(188, 67, 54);
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+//mixin dengan argumen dengan nilai default
+@mixin flex-box($direction: row, $justify: start, $align: start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+.container {
+  @include flex-box(row-reverse, space-evenly, center);
+  width: 600px;
+  height: 400px;
+  background-color: #eaeaea;
+  .box {
+    width: 60px;
+    height: 60px;
+    background-color: #bada55;
+    text-align: center;
+    line-height: 60px;
+  }
+}
